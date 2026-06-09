@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qubtan: Fleet Intelligence for the Gulf</title>
+  <meta name="description" content="Boats, berths, bookings, members, and money. One platform built for UAE maritime operations.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    :root {
+      --black: #000000; --f5: #f5f5f7; --a1: #a1a1a6;
+      --6e: #6e6e73; --1d: #1d1d1f;
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body { background: var(--black); color: var(--f5); font-family: var(--font); font-size: 17px; line-height: 1.47; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 22px; height: 52px;
+      background: rgba(0,0,0,0.82);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      animation: nav-drop 0.7s cubic-bezier(.16,1,.3,1) both;
+    }
+    @keyframes nav-drop { from { transform: translateY(-52px); opacity: 0; } to {} }
+
+    .nav-name { font-size: 15px; font-weight: 500; color: var(--f5); letter-spacing: -0.01em; text-decoration: none; }
+    .nav-cta { font-size: 13px; color: var(--f5); text-decoration: none; padding: 7px 16px; background: rgba(255,255,255,0.1); border-radius: 980px; transition: background 0.2s; white-space: nowrap; }
+    .nav-cta:hover { background: rgba(255,255,255,0.16); }
+
+    section { border-bottom: 1px solid var(--1d); }
+
+    /* HERO */
+    .hero { padding: 88px 22px 80px; }
+    .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--6e); text-transform: uppercase; margin-bottom: 20px; animation: load-up 0.6s cubic-bezier(.16,1,.3,1) 0.1s both; }
+    .hero h1 { font-size: clamp(40px, 11vw, 64px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.04; color: var(--f5); margin-bottom: 24px; }
+    .hero h1 .line { display: block; overflow: hidden; }
+    .hero h1 .line-inner { display: block; animation: line-rise 0.9s cubic-bezier(.16,1,.3,1) calc(0.15s + var(--li) * 0.12s) both; }
+    @keyframes line-rise { from { transform: translateY(110%); } to { transform: translateY(0); } }
+    @keyframes load-up { from { opacity: 0; transform: translateY(14px); } to {} }
+
+    .hero-sub { font-size: 19px; color: var(--a1); letter-spacing: -0.01em; line-height: 1.5; max-width: 400px; margin-bottom: 40px; animation: load-up 0.7s cubic-bezier(.16,1,.3,1) 0.55s both; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 6px; font-size: 17px; font-weight: 400; color: #000; background: var(--f5); text-decoration: none; padding: 12px 24px; border-radius: 980px; transition: opacity 0.15s, transform 0.15s; animation: load-up 0.7s cubic-bezier(.16,1,.3,1) 0.7s both; }
+    .btn-primary:hover { opacity: 0.88; transform: scale(1.02); }
+
+    /* NUMBERS */
+    .numbers { padding: 48px 22px; display: flex; gap: 40px; flex-wrap: wrap; }
+    .num-item { display: flex; flex-direction: column; gap: 4px; }
+    .num-val { font-size: clamp(28px, 7vw, 42px); font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--f5); }
+    .num-label { font-size: 13px; color: var(--6e); }
+
+    /* FEATURES */
+    .features { padding: 64px 22px; }
+    .section-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--6e); text-transform: uppercase; margin-bottom: 40px; }
+    .feat-list { display: flex; flex-direction: column; }
+    .feat-item {
+      padding: 28px 0; border-top: 1px solid var(--1d);
+      display: grid; grid-template-columns: 1fr 2fr; gap: 24px; align-items: start;
+      transition: border-color 0.3s;
+    }
+    .feat-item:hover { border-color: rgba(255,255,255,0.12); }
+    .feat-item:first-child { border-top: none; }
+    .feat-name { font-size: 15px; font-weight: 600; color: var(--f5); letter-spacing: -0.01em; }
+    .feat-desc { font-size: 15px; color: var(--a1); line-height: 1.55; }
+
+    /* CTA */
+    .cta-section { padding: 80px 22px; }
+    .cta-section h2 { font-size: clamp(28px, 7vw, 40px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 16px; }
+    .cta-sub { font-size: 17px; color: var(--a1); margin-bottom: 32px; max-width: 360px; }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; color: var(--f5); text-decoration: none; padding: 10px 22px; border: 1px solid rgba(255,255,255,0.2); border-radius: 980px; transition: border-color 0.15s, background 0.15s, transform 0.15s; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.35); transform: scale(1.02); }
+
+    footer { padding: 28px 22px 40px; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-l { display: flex; flex-direction: column; gap: 4px; }
+    .footer-name { font-size: 15px; font-weight: 500; color: var(--f5); }
+    .footer-co { font-size: 13px; color: var(--6e); }
+    .footer-links { display: flex; gap: 20px; align-items: center; }
+    .footer-links a { font-size: 13px; color: var(--a1); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--f5); }
+
+    /* SCROLL REVEAL */
+    [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1); }
+    [data-reveal].on { opacity: 1; transform: none; }
+    [data-stagger] > * { opacity: 0; transform: translateY(24px); transition: opacity 0.65s cubic-bezier(.16,1,.3,1), transform 0.65s cubic-bezier(.16,1,.3,1); }
+    [data-stagger] > *.on { opacity: 1; transform: none; }
+
+    @media (max-width: 520px) { .feat-item { grid-template-columns: 1fr; gap: 8px; } }
+    @media (min-width: 640px) {
+      nav { padding: 0 max(22px, calc((100vw - 600px) / 2)); }
+      .hero, .numbers, .features, .cta-section, footer { padding-left: max(22px, calc((100vw - 600px) / 2)); padding-right: max(22px, calc((100vw - 600px) / 2)); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="../">Mohammed Al&#8209;Sarraj</a>
+  <a class="nav-cta" href="https://wa.me/971504944664">Request demo</a>
+</nav>
+
+<section class="hero">
+  <p class="eyebrow">Operations Software</p>
+  <h1>Your fleet.<br>Under command.</h1>
+  <p class="hero-sub">Boats, berths, bookings, members, and money. One platform built for UAE maritime operations that knows your fleet better than your harbor master.</p>
+  <a class="btn-primary" href="https://wa.me/971504944664">Request a demo ↗</a>
+</section>
+
+<section class="numbers" data-reveal>
+  <div class="num-item">
+    <span class="num-val" data-count="16" data-suffix="">16</span>
+    <span class="num-label">Management modules</span>
+  </div>
+  <div class="num-item">
+    <span class="num-val" data-count="9" data-suffix="">9</span>
+    <span class="num-label">Role types</span>
+  </div>
+  <div class="num-item">
+    <span class="num-val" data-count="100" data-suffix="%">100%</span>
+    <span class="num-label">Encrypted PII</span>
+  </div>
+</section>
+
+<section class="features">
+  <p class="section-eyebrow" data-reveal>What it does</p>
+  <div class="feat-list" data-stagger>
+
+    <div class="feat-item">
+      <span class="feat-name">AI fleet intelligence</span>
+      <span class="feat-desc">Ask anything in plain English. "Which boat made the most money last quarter?" Qubtan reads your database, builds a safe read&#8209;only query, and returns the answer. No SQL, no analyst.</span>
+    </div>
+
+    <div class="feat-item">
+      <span class="feat-name">Encrypted member records</span>
+      <span class="feat-desc">All PII, emails, phone numbers, guest contacts, stored with Fernet encryption. Role&#8209;based access means each staff member sees only what they need.</span>
+    </div>
+
+    <div class="feat-item">
+      <span class="feat-name">Fleet &amp; marina management</span>
+      <span class="feat-desc">Boat registration, berth assignments, maintenance logs, booking calendars, and occupancy tracking. All in one place, status visible at a glance.</span>
+    </div>
+
+    <div class="feat-item">
+      <span class="feat-name">Automated compliance alerts</span>
+      <span class="feat-desc">Subscription expiry, overdue invoices, membership renewals, and daily score refreshes fire automatically. Nothing falls through a spreadsheet.</span>
+    </div>
+
+    <div class="feat-item">
+      <span class="feat-name">Built for GCC operations</span>
+      <span class="feat-desc">Designed for and deployed at Captain's Club, a real UAE maritime business. The workflows reflect how marinas in the Gulf actually operate, not how a generic SaaS thinks they do.</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section" data-reveal>
+  <h2>See it with your data.</h2>
+  <p class="cta-sub">I'll set up a live demo with your actual fleet. Takes about 30 minutes.</p>
+  <a class="btn-ghost" href="https://wa.me/971504944664">WhatsApp ↗</a>
+</section>
+
+<footer data-reveal>
+  <div class="footer-l">
+    <span class="footer-name">Mohammed Al&#8209;Sarraj</span>
+    <span class="footer-co">Tarn Labs</span>
+  </div>
+  <div class="footer-links">
+    <a href="../">← Portfolio</a>
+    <a href="mailto:moealsarraj@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Split hero h1 lines
+  var h1 = document.querySelector('.hero h1');
+  if (h1) {
+    h1.innerHTML = h1.innerHTML.split('<br>').map(function (l, i) {
+      return '<span class="line"><span class="line-inner" style="--li:' + i + '">' + l + '</span></span>';
+    }).join('');
+  }
+
+  // Counter animation
+  function countUp(el) {
+    var target = parseInt(el.dataset.count, 10);
+    var suffix = el.dataset.suffix || '';
+    var dur = 1400, t0 = performance.now();
+    (function tick(now) {
+      var p = Math.min((now - t0) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(e * target) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  // Scroll observers
+  var revObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var el = en.target;
+      if (el.dataset.stagger !== undefined) {
+        Array.from(el.children).forEach(function (child, i) {
+          setTimeout(function () { child.classList.add('on'); }, i * 90);
+        });
+      } else {
+        el.classList.add('on');
+      }
+      revObs.unobserve(el);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+  document.querySelectorAll('[data-reveal],[data-stagger]').forEach(function (el) { revObs.observe(el); });
+
+  var cntObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      countUp(en.target);
+      cntObs.unobserve(en.target);
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-count]').forEach(function (el) { cntObs.observe(el); });
+})();
+</script>
+
+</body>
+</html>

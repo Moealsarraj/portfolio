@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masna: Autonomous Product Factory</title>
+  <meta name="description" content="One run. One new developer tool, researched, built, tested, and pushed to GitHub. 7-stage pipeline, no manual steps.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    :root {
+      --black: #000000; --f5: #f5f5f7; --a1: #a1a1a6;
+      --6e: #6e6e73; --1d: #1d1d1f;
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body { background: var(--black); color: var(--f5); font-family: var(--font); font-size: 17px; line-height: 1.47; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 22px; height: 52px;
+      background: rgba(0,0,0,0.82);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      animation: nav-drop 0.7s cubic-bezier(.16,1,.3,1) both;
+    }
+    @keyframes nav-drop { from { transform: translateY(-52px); opacity: 0; } to {} }
+
+    .nav-name { font-size: 15px; font-weight: 500; color: var(--f5); letter-spacing: -0.01em; text-decoration: none; }
+    .nav-cta { font-size: 13px; color: var(--f5); text-decoration: none; padding: 7px 16px; background: rgba(255,255,255,0.1); border-radius: 980px; transition: background 0.2s; }
+    .nav-cta:hover { background: rgba(255,255,255,0.16); }
+
+    section { border-bottom: 1px solid var(--1d); }
+
+    /* HERO */
+    .hero { padding: 88px 22px 80px; }
+    .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--6e); text-transform: uppercase; margin-bottom: 20px; animation: load-up 0.6s cubic-bezier(.16,1,.3,1) 0.1s both; }
+    .hero h1 { font-size: clamp(40px, 11vw, 64px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.04; color: var(--f5); margin-bottom: 24px; }
+    .hero h1 .line { display: block; overflow: hidden; }
+    .hero h1 .line-inner { display: block; animation: line-rise 0.9s cubic-bezier(.16,1,.3,1) calc(0.15s + var(--li) * 0.12s) both; }
+    @keyframes line-rise { from { transform: translateY(110%); } to { transform: translateY(0); } }
+    @keyframes load-up { from { opacity: 0; transform: translateY(14px); } to {} }
+
+    .hero-sub { font-size: 19px; color: var(--a1); letter-spacing: -0.01em; line-height: 1.5; max-width: 400px; margin-bottom: 40px; animation: load-up 0.7s cubic-bezier(.16,1,.3,1) 0.55s both; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 6px; font-size: 17px; font-weight: 400; color: #000; background: var(--f5); text-decoration: none; padding: 12px 24px; border-radius: 980px; transition: opacity 0.15s, transform 0.15s; animation: load-up 0.7s cubic-bezier(.16,1,.3,1) 0.7s both; }
+    .btn-primary:hover { opacity: 0.88; transform: scale(1.02); }
+
+    /* PIPELINE — special sequential reveal with connecting line */
+    .pipeline { padding: 64px 22px; }
+    .section-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--6e); text-transform: uppercase; margin-bottom: 40px; }
+
+    .pipe-track {
+      display: flex; flex-direction: column; gap: 0;
+      position: relative;
+    }
+    .pipe-track::before {
+      content: '';
+      position: absolute;
+      left: 36px; top: 8px; bottom: 8px;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--1d) 8%, var(--1d) 92%, transparent);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 2.2s cubic-bezier(.16,1,.3,1) 0.3s;
+    }
+    .pipe-track.line-on::before { transform: scaleY(1); }
+
+    .pipe-stage {
+      padding: 22px 0 22px 64px; border-top: 1px solid var(--1d);
+      position: relative;
+    }
+    .pipe-stage:first-child { border-top: none; }
+
+    /* Stage dot on the connecting line */
+    .pipe-stage::before {
+      content: '';
+      position: absolute;
+      left: 32px; top: 30px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--1d);
+      border: 1px solid var(--6e);
+      transition: background 0.4s, border-color 0.4s, transform 0.4s;
+    }
+    .pipe-stage.on::before { background: var(--6e); border-color: var(--a1); transform: scale(1.2); }
+
+    .pipe-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--6e); margin-bottom: 6px; display: block; }
+    .pipe-content { display: flex; flex-direction: column; gap: 6px; }
+    .pipe-title { font-size: 17px; font-weight: 600; color: var(--f5); letter-spacing: -0.01em; }
+    .pipe-desc { font-size: 15px; color: var(--a1); line-height: 1.55; }
+
+    /* Pipe stages start hidden, JS reveals them */
+    .pipe-stage { opacity: 0; transform: translateX(-16px); transition: opacity 0.6s cubic-bezier(.16,1,.3,1), transform 0.6s cubic-bezier(.16,1,.3,1); }
+    .pipe-stage.on { opacity: 1; transform: none; }
+
+    /* DETAILS */
+    .details { padding: 64px 22px; }
+    .detail-list { display: flex; flex-direction: column; }
+    .detail-item { padding: 24px 0; border-top: 1px solid var(--1d); display: grid; grid-template-columns: 1fr 2fr; gap: 24px; align-items: start; }
+    .detail-item:first-child { border-top: none; }
+    .detail-name { font-size: 15px; font-weight: 600; color: var(--f5); }
+    .detail-desc { font-size: 15px; color: var(--a1); line-height: 1.55; }
+
+    /* CTA */
+    .cta-section { padding: 80px 22px; }
+    .cta-section h2 { font-size: clamp(28px, 7vw, 40px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 16px; }
+    .cta-sub { font-size: 17px; color: var(--a1); margin-bottom: 32px; max-width: 380px; }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; color: var(--f5); text-decoration: none; padding: 10px 22px; border: 1px solid rgba(255,255,255,0.2); border-radius: 980px; transition: border-color 0.15s, background 0.15s, transform 0.15s; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.35); transform: scale(1.02); }
+
+    footer { padding: 28px 22px 40px; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-l { display: flex; flex-direction: column; gap: 4px; }
+    .footer-name { font-size: 15px; font-weight: 500; color: var(--f5); }
+    .footer-co { font-size: 13px; color: var(--6e); }
+    .footer-links { display: flex; gap: 20px; align-items: center; }
+    .footer-links a { font-size: 13px; color: var(--a1); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--f5); }
+
+    /* SCROLL REVEAL */
+    [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1); }
+    [data-reveal].on { opacity: 1; transform: none; }
+    [data-stagger] > * { opacity: 0; transform: translateY(22px); transition: opacity 0.65s cubic-bezier(.16,1,.3,1), transform 0.65s cubic-bezier(.16,1,.3,1); }
+    [data-stagger] > *.on { opacity: 1; transform: none; }
+
+    @media (max-width: 520px) { .detail-item { grid-template-columns: 1fr; gap: 8px; } }
+    @media (min-width: 640px) {
+      nav { padding: 0 max(22px, calc((100vw - 600px) / 2)); }
+      .hero, .pipeline, .details, .cta-section, footer { padding-left: max(22px, calc((100vw - 600px) / 2)); padding-right: max(22px, calc((100vw - 600px) / 2)); }
+      .pipe-track::before { left: calc(max(22px, calc((100vw - 600px) / 2)) + 36px); }
+      .pipe-stage { padding-left: 64px; }
+      .pipe-stage::before { left: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="../">Mohammed Al&#8209;Sarraj</a>
+  <a class="nav-cta" href="https://wa.me/971504944664">Get in touch</a>
+</nav>
+
+<section class="hero">
+  <p class="eyebrow">Autonomous Builder</p>
+  <h1>One prompt.<br>One product.</h1>
+  <p class="hero-sub">Masna is an autonomous product factory. Point it at a market and it scouts the space, picks the best opportunity, writes the spec, builds the software, runs the tests, and pushes to GitHub. No human in the loop.</p>
+  <a class="btn-primary" href="https://wa.me/971504944664">Get in touch ↗</a>
+</section>
+
+<section class="pipeline">
+  <p class="section-eyebrow" data-reveal>The 7&#8209;stage pipeline</p>
+  <div class="pipe-track" id="pipeTrack">
+
+    <div class="pipe-stage">
+      <span class="pipe-tag">Stage 1</span>
+      <div class="pipe-content">
+        <span class="pipe-title">Scout</span>
+        <span class="pipe-desc">Scrapes trending developer tools, popular GitHub repositories, and Product Hunt launches. Builds a real&#8209;time picture of what's getting attention in a given space.</span>
+      </div>
+    </div>
+
+    <div class="pipe-stage">
+      <span class="pipe-tag">Stage 2</span>
+      <div class="pipe-content">
+        <span class="pipe-title">Analyze</span>
+        <span class="pipe-desc">Maps the scouted tools against an existing portfolio. Finds the gap: what's missing, what's underserved, what a new tool could do better or more narrowly.</span>
+      </div>
+    </div>
+
+    <div class="pipe-stage">
+      <span class="pipe-tag">Stage 3</span>
+      <div class="pipe-content">
+        <span class="pipe-title">Score</span>
+        <span class="pipe-desc">Ranks the candidates by buildability, market size, and differentiation. Picks the best bet from the shortlist.</span>
+      </div>
+    </div>
+
+    <div class="pipe-stage">
+      <span class="pipe-tag">Stage 4</span>
+      <div class="pipe-content">
+        <span class="pipe-title">Spec</span>
+        <span class="pipe-desc">Writes a full product requirements document: features, user flows, API design, data model. The spec drives the build stage without ambiguity.</span>
+      </div>
+    </div>
+
+    <div class="pipe-stage">
+      <span class="pipe-tag">Stage 5</span>
+      <div class="pipe-content">
+        <span class="pipe-title">Build</span>
+        <span class="pipe-desc">Scaffolds and implements the tool from the spec. Not a skeleton. A working product. Uses pre&#8209;built templates to minimize token usage and stay on scope.</span>
+      </div>
+    </div>
+
+    <div class="pipe-stage">
+      <span class="pipe-tag">Stage 6</span>
+      <div class="pipe-content">
+        <span class="pipe-title">Test</span>
+        <span class="pipe-desc">Verifies the tool actually works. Runs the core flows, checks edge cases, confirms the output matches the spec. If it doesn't pass, it doesn't ship.</span>
+      </div>
+    </div>
+
+    <div class="pipe-stage">
+      <span class="pipe-tag">Stage 7</span>
+      <div class="pipe-content">
+        <span class="pipe-title">Ship</span>
+        <span class="pipe-desc">Commits the code, creates a GitHub repository, pushes, and opens a PR. Everything is documented and reviewable from the first commit.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="details">
+  <p class="section-eyebrow" data-reveal>Under the hood</p>
+  <div class="detail-list" data-stagger>
+
+    <div class="detail-item">
+      <span class="detail-name">Crash&#8209;resistant state</span>
+      <span class="detail-desc">Pipeline state is persisted to disk after every stage. If a run fails at stage 5, the next run picks up exactly where it left off. No re&#8209;scouting, no re&#8209;speccing.</span>
+    </div>
+
+    <div class="detail-item">
+      <span class="detail-name">Streaming progress UI</span>
+      <span class="detail-desc">The web UI streams stage output in real time via SSE. You can watch what's being built, catch issues early, and intervene before the full pipeline completes.</span>
+    </div>
+
+    <div class="detail-item">
+      <span class="detail-name">Pre&#8209;built templates</span>
+      <span class="detail-desc">Common patterns like Flask apps, CLI tools, and API wrappers are templated. The build stage fills in the specific logic rather than generating boilerplate from scratch. Faster and more consistent.</span>
+    </div>
+
+    <div class="detail-item">
+      <span class="detail-name">CLI and web UI</span>
+      <span class="detail-desc">Run it headless from the terminal with <code>python factory.py</code>, or use the web interface at port 5025 for a live progress view. Both modes use the same underlying pipeline.</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section" data-reveal>
+  <h2>See it build something.</h2>
+  <p class="cta-sub">Tell me what space you're interested in and I'll run a live demo. From prompt to a working GitHub repo, in one session.</p>
+  <a class="btn-ghost" href="https://wa.me/971504944664">WhatsApp ↗</a>
+</section>
+
+<footer data-reveal>
+  <div class="footer-l">
+    <span class="footer-name">Mohammed Al&#8209;Sarraj</span>
+    <span class="footer-co">Tarn Labs</span>
+  </div>
+  <div class="footer-links">
+    <a href="../">← Portfolio</a>
+    <a href="mailto:moealsarraj@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Hero h1 line split
+  var h1 = document.querySelector('.hero h1');
+  if (h1) {
+    h1.innerHTML = h1.innerHTML.split('<br>').map(function (l, i) {
+      return '<span class="line"><span class="line-inner" style="--li:' + i + '">' + l + '</span></span>';
+    }).join('');
+  }
+
+  // Pipeline: observe the track, then cascade stages + draw the line
+  var pipeTrack = document.getElementById('pipeTrack');
+  if (pipeTrack) {
+    var pipeObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        // Draw connecting line
+        pipeTrack.classList.add('line-on');
+        // Cascade stage reveals
+        var stages = pipeTrack.querySelectorAll('.pipe-stage');
+        stages.forEach(function (stage, i) {
+          setTimeout(function () { stage.classList.add('on'); }, i * 120);
+        });
+        pipeObs.unobserve(pipeTrack);
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
+    pipeObs.observe(pipeTrack);
+  }
+
+  // General scroll reveal + stagger
+  var revObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var el = en.target;
+      if (el.dataset.stagger !== undefined) {
+        Array.from(el.children).forEach(function (child, i) {
+          setTimeout(function () { child.classList.add('on'); }, i * 90);
+        });
+      } else {
+        el.classList.add('on');
+      }
+      revObs.unobserve(el);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+  document.querySelectorAll('[data-reveal],[data-stagger]').forEach(function (el) { revObs.observe(el); });
+})();
+</script>
+
+</body>
+</html>

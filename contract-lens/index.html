@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contract Lens: UAE Contract Compliance Auditor</title>
+  <meta name="description" content="115 compliance checks across 9 legal domains. Every risk flagged with the exact article citation.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    :root {
+      --black: #000000; --f5: #f5f5f7; --a1: #a1a1a6;
+      --6e: #6e6e73; --1d: #1d1d1f;
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body { background: var(--black); color: var(--f5); font-family: var(--font); font-size: 17px; line-height: 1.47; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 22px; height: 52px;
+      background: rgba(0,0,0,0.82);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      animation: nav-drop 0.7s cubic-bezier(.16,1,.3,1) both;
+    }
+    @keyframes nav-drop { from { transform: translateY(-52px); opacity: 0; } to {} }
+
+    .nav-name { font-size: 15px; font-weight: 500; color: var(--f5); letter-spacing: -0.01em; text-decoration: none; }
+    .nav-cta { font-size: 13px; color: var(--f5); text-decoration: none; padding: 7px 16px; background: rgba(255,255,255,0.1); border-radius: 980px; transition: background 0.2s; }
+    .nav-cta:hover { background: rgba(255,255,255,0.16); }
+
+    section { border-bottom: 1px solid var(--1d); }
+
+    /* HERO */
+    .hero { padding: 88px 22px 80px; }
+    .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--6e); text-transform: uppercase; margin-bottom: 20px; animation: load-up 0.6s cubic-bezier(.16,1,.3,1) 0.1s both; }
+    .hero h1 { font-size: clamp(40px, 11vw, 64px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.04; color: var(--f5); margin-bottom: 24px; }
+    .hero h1 .line { display: block; overflow: hidden; }
+    .hero h1 .line-inner { display: block; animation: line-rise 0.9s cubic-bezier(.16,1,.3,1) calc(0.15s + var(--li) * 0.12s) both; }
+    @keyframes line-rise { from { transform: translateY(110%); } to { transform: translateY(0); } }
+    @keyframes load-up { from { opacity: 0; transform: translateY(14px); } to {} }
+
+    .hero-sub { font-size: 19px; color: var(--a1); letter-spacing: -0.01em; line-height: 1.5; max-width: 400px; margin-bottom: 40px; animation: load-up 0.7s cubic-bezier(.16,1,.3,1) 0.55s both; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 6px; font-size: 17px; font-weight: 400; color: #000; background: var(--f5); text-decoration: none; padding: 12px 24px; border-radius: 980px; transition: opacity 0.15s, transform 0.15s; animation: load-up 0.7s cubic-bezier(.16,1,.3,1) 0.7s both; }
+    .btn-primary:hover { opacity: 0.88; transform: scale(1.02); }
+
+    /* STATS */
+    .stats { padding: 48px 22px; display: flex; gap: 40px; flex-wrap: wrap; }
+    .stat-item { display: flex; flex-direction: column; gap: 4px; }
+    .stat-val { font-size: clamp(28px, 7vw, 42px); font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--f5); }
+    .stat-label { font-size: 13px; color: var(--6e); }
+
+    /* DOMAINS */
+    .domains { padding: 64px 22px; }
+    .section-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--6e); text-transform: uppercase; margin-bottom: 40px; }
+    .domain-list { display: flex; flex-direction: column; }
+    .domain-item { padding: 20px 0; border-top: 1px solid var(--1d); display: grid; grid-template-columns: 1fr 2fr; gap: 24px; align-items: start; }
+    .domain-item:first-child { border-top: none; }
+    .domain-name { font-size: 15px; font-weight: 600; color: var(--f5); }
+    .domain-desc { font-size: 15px; color: var(--a1); line-height: 1.55; }
+
+    /* REPORT */
+    .report-section { padding: 64px 22px; }
+    .report-desc { font-size: 19px; color: var(--a1); line-height: 1.6; max-width: 500px; margin-bottom: 28px; }
+    .report-items { display: flex; flex-direction: column; }
+    .report-item { font-size: 15px; color: var(--6e); padding: 14px 0; border-top: 1px solid var(--1d); display: flex; align-items: baseline; gap: 8px; }
+    .report-item:first-child { border-top: none; }
+    .report-item strong { color: var(--a1); }
+
+    /* CTA */
+    .cta-section { padding: 80px 22px; }
+    .cta-section h2 { font-size: clamp(28px, 7vw, 40px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 16px; }
+    .cta-sub { font-size: 17px; color: var(--a1); margin-bottom: 32px; max-width: 380px; }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; color: var(--f5); text-decoration: none; padding: 10px 22px; border: 1px solid rgba(255,255,255,0.2); border-radius: 980px; transition: border-color 0.15s, background 0.15s, transform 0.15s; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.35); transform: scale(1.02); }
+
+    footer { padding: 28px 22px 40px; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-l { display: flex; flex-direction: column; gap: 4px; }
+    .footer-name { font-size: 15px; font-weight: 500; color: var(--f5); }
+    .footer-co { font-size: 13px; color: var(--6e); }
+    .footer-links { display: flex; gap: 20px; align-items: center; }
+    .footer-links a { font-size: 13px; color: var(--a1); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--f5); }
+
+    /* SCROLL REVEAL */
+    [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1); }
+    [data-reveal].on { opacity: 1; transform: none; }
+    [data-stagger] > * { opacity: 0; transform: translateY(22px); transition: opacity 0.65s cubic-bezier(.16,1,.3,1), transform 0.65s cubic-bezier(.16,1,.3,1); }
+    [data-stagger] > *.on { opacity: 1; transform: none; }
+
+    @media (max-width: 520px) { .domain-item { grid-template-columns: 1fr; gap: 8px; } }
+    @media (min-width: 640px) {
+      nav { padding: 0 max(22px, calc((100vw - 600px) / 2)); }
+      .hero, .stats, .domains, .report-section, .cta-section, footer { padding-left: max(22px, calc((100vw - 600px) / 2)); padding-right: max(22px, calc((100vw - 600px) / 2)); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="../">Mohammed Al&#8209;Sarraj</a>
+  <a class="nav-cta" href="https://wa.me/971504944664">Request audit</a>
+</nav>
+
+<section class="hero">
+  <p class="eyebrow">Legal AI</p>
+  <h1>115 checks.<br>Zero blind spots.</h1>
+  <p class="hero-sub">Contract Lens audits contracts against UAE law across 9 legal domains, flags every risk with the exact article citation, and exports a full PDF report ready for legal counsel.</p>
+  <a class="btn-primary" href="https://wa.me/971504944664">Request an audit ↗</a>
+</section>
+
+<section class="stats" data-reveal>
+  <div class="stat-item">
+    <span class="stat-val" data-count="115" data-suffix="">115</span>
+    <span class="stat-label">Compliance checks</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-val" data-count="9" data-suffix="">9</span>
+    <span class="stat-label">Legal domains</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-val">PDF</span>
+    <span class="stat-label">Export ready</span>
+  </div>
+</section>
+
+<section class="domains">
+  <p class="section-eyebrow" data-reveal>Legal domains covered</p>
+  <div class="domain-list" data-stagger>
+
+    <div class="domain-item">
+      <span class="domain-name">Commercial contracts</span>
+      <span class="domain-desc">Federal Law No. 2 of 2015 (Commercial Companies) and related commercial code: formation, obligations, liability caps, termination rights.</span>
+    </div>
+
+    <div class="domain-item">
+      <span class="domain-name">Employment &amp; labour</span>
+      <span class="domain-desc">UAE Labour Law and DIFC/ADGM employment regulations: probation, termination clauses, non&#8209;compete enforceability, end&#8209;of&#8209;service provisions.</span>
+    </div>
+
+    <div class="domain-item">
+      <span class="domain-name">Data protection</span>
+      <span class="domain-desc">Federal Decree&#8209;Law No. 45 of 2021 (PDPL): data processing obligations, cross&#8209;border transfers, consent requirements, breach notification clauses.</span>
+    </div>
+
+    <div class="domain-item">
+      <span class="domain-name">Intellectual property</span>
+      <span class="domain-desc">IP ownership, assignment clauses, work&#8209;for&#8209;hire language, licensing terms, and non&#8209;disclosure enforceability under UAE IP law.</span>
+    </div>
+
+    <div class="domain-item">
+      <span class="domain-name">Real estate &amp; lease</span>
+      <span class="domain-desc">RERA regulations, tenancy agreement requirements, rent escalation limits, maintenance obligations, and eviction conditions.</span>
+    </div>
+
+    <div class="domain-item">
+      <span class="domain-name">+ 4 more domains</span>
+      <span class="domain-desc">Consumer protection, financial services, agency agreements, and construction contracts. All checked against current UAE federal and emirate&#8209;level law.</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="report-section">
+  <p class="section-eyebrow" data-reveal>What the report contains</p>
+  <p class="report-desc" data-reveal>Every flagged clause is cited with the specific article and law number. Not a generic warning. A real reference your lawyer can act on.</p>
+  <div class="report-items" data-stagger>
+    <div class="report-item"><strong>Clause reference:</strong> exact section and line in the contract</div>
+    <div class="report-item"><strong>Law citation:</strong> the UAE federal law, decree, or regulation</div>
+    <div class="report-item"><strong>Risk level:</strong> critical, moderate, or advisory</div>
+    <div class="report-item"><strong>Suggested fix:</strong> alternative language that would pass the check</div>
+    <div class="report-item"><strong>PDF export:</strong> formatted for sharing with legal counsel</div>
+  </div>
+</section>
+
+<section class="cta-section" data-reveal>
+  <h2>Send a contract.</h2>
+  <p class="cta-sub">Upload any PDF or Word document. I'll run the full audit and send back the report within 24 hours.</p>
+  <a class="btn-ghost" href="mailto:moealsarraj@gmail.com?subject=Contract%20Lens%20Audit%20Request">Email a contract ↗</a>
+</section>
+
+<footer data-reveal>
+  <div class="footer-l">
+    <span class="footer-name">Mohammed Al&#8209;Sarraj</span>
+    <span class="footer-co">Tarn Labs</span>
+  </div>
+  <div class="footer-links">
+    <a href="../">← Portfolio</a>
+    <a href="https://wa.me/971504944664">WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var h1 = document.querySelector('.hero h1');
+  if (h1) {
+    h1.innerHTML = h1.innerHTML.split('<br>').map(function (l, i) {
+      return '<span class="line"><span class="line-inner" style="--li:' + i + '">' + l + '</span></span>';
+    }).join('');
+  }
+
+  function countUp(el) {
+    var target = parseInt(el.dataset.count, 10);
+    var suffix = el.dataset.suffix || '';
+    var dur = 1400, t0 = performance.now();
+    (function tick(now) {
+      var p = Math.min((now - t0) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(e * target) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  var revObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var el = en.target;
+      if (el.dataset.stagger !== undefined) {
+        Array.from(el.children).forEach(function (child, i) {
+          setTimeout(function () { child.classList.add('on'); }, i * 90);
+        });
+      } else {
+        el.classList.add('on');
+      }
+      revObs.unobserve(el);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+  document.querySelectorAll('[data-reveal],[data-stagger]').forEach(function (el) { revObs.observe(el); });
+
+  var cntObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      countUp(en.target);
+      cntObs.unobserve(en.target);
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-count]').forEach(function (el) { cntObs.observe(el); });
+})();
+</script>
+
+</body>
+</html>

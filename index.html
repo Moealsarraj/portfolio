@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohammed Al-Sarraj</title>
+  <meta name="description" content="AI-powered software, built fast.">
+  <style>
+    /* =================================================================
+       CLIENT CONFIG — edit these 4 values per client
+    ================================================================= */
+    /* demoUrl, waNumber, email, heroSub — see script block below     */
+    /* =============================================================== */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    :root {
+      --black:   #000000;
+      --f5:      #f5f5f7;   /* Apple primary text    */
+      --a1:      #a1a1a6;   /* Apple secondary text  */
+      --6e:      #6e6e73;   /* Apple tertiary text   */
+      --1d:      #1d1d1f;   /* Apple border / divider*/
+      --card:    #161617;   /* card background       */
+      --font:    -apple-system, BlinkMacSystemFont, 'SF Pro Display',
+                 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--f5);
+      font-family: var(--font);
+      font-size: 17px;
+      line-height: 1.47059;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 22px;
+      height: 52px;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      animation: nav-drop 0.7s cubic-bezier(.16,1,.3,1) both;
+    }
+    @keyframes nav-drop { from { transform: translateY(-52px); opacity: 0; } to {} }
+
+    .nav-name {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--f5);
+    }
+
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--f5);
+      text-decoration: none;
+      padding: 7px 16px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 980px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: rgba(255,255,255,0.16); }
+
+    /* ---- STATS BANNER ---- */
+    .stats-banner {
+      padding: 36px 22px 32px;
+      border-bottom: 1px solid var(--1d);
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item { display: flex; flex-direction: column; gap: 4px; }
+
+    .stat-num {
+      font-size: clamp(32px, 8vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--f5);
+    }
+
+    .stat-label {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--6e);
+      letter-spacing: 0.01em;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      padding: 80px 22px 72px;
+      border-bottom: 1px solid var(--1d);
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 10vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.07;
+      color: var(--f5);
+      margin-bottom: 18px;
+    }
+
+    .hero-sub {
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--a1);
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+      max-width: 360px;
+    }
+
+    /* ---- FEATURED ---- */
+    .featured {
+      padding: 64px 22px 56px;
+      border-bottom: 1px solid var(--1d);
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--6e);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .featured h2 {
+      font-size: clamp(32px, 8.5vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.07;
+      color: var(--f5);
+      margin-bottom: 14px;
+    }
+
+    .featured-sub {
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--a1);
+      letter-spacing: -0.01em;
+      line-height: 1.45;
+      margin-bottom: 28px;
+      max-width: 400px;
+    }
+
+    .feat-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .feat-pill {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--a1);
+      padding: 5px 13px;
+      border: 1px solid var(--1d);
+      border-radius: 980px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 17px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: #000;
+      background: var(--f5);
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 980px;
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: scale(1.02); }
+
+    .btn-arr { font-size: 15px; }
+
+    /* ---- PROJECT LIST ---- */
+    .projects {
+      padding: 0 22px;
+    }
+
+    .project-item {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--1d);
+    }
+    .project-item:last-child { border-bottom: none; }
+
+    .proj-cat {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--6e);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .proj-name {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.022em;
+      line-height: 1.1;
+      color: var(--f5);
+      margin-bottom: 10px;
+    }
+
+    .proj-desc {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--a1);
+      letter-spacing: -0.005em;
+      line-height: 1.52;
+      max-width: 380px;
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 20px;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--f5);
+      text-decoration: none;
+      padding: 8px 18px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 980px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.3); }
+
+    /* ---- FOOTER ---- */
+    footer {
+      padding: 28px 22px 40px;
+      border-top: 1px solid var(--1d);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-l { display: flex; flex-direction: column; gap: 4px; }
+
+    .footer-name {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--f5);
+      letter-spacing: -0.01em;
+    }
+
+    .footer-co {
+      font-size: 13px;
+      color: var(--6e);
+    }
+
+    .footer-links { display: flex; gap: 20px; align-items: center; }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--a1);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--f5); }
+
+    /* ---- ANIMATIONS ---- */
+    @keyframes load-up { from { opacity: 0; transform: translateY(14px); } to {} }
+    @keyframes line-rise { from { transform: translateY(110%); } to { transform: translateY(0); } }
+
+    /* Hero h1 line split */
+    .hero h1 .line { display: block; overflow: hidden; }
+    .hero h1 .line-inner { display: block; animation: line-rise 0.9s cubic-bezier(.16,1,.3,1) calc(0.1s + var(--li) * 0.12s) both; }
+
+    /* Hero supporting content */
+    .hero-sub { animation: load-up 0.7s cubic-bezier(.16,1,.3,1) 0.45s both; }
+
+    /* Stats banner: counter numbers start at 0 */
+    .stats-banner { animation: load-up 0.7s cubic-bezier(.16,1,.3,1) 0.05s both; }
+
+    /* Featured: eyebrow, h2, sub, pills, btn */
+    .eyebrow { animation: load-up 0.6s cubic-bezier(.16,1,.3,1) 0.1s both; }
+
+    /* Scroll reveal */
+    [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1); }
+    [data-reveal].on { opacity: 1; transform: none; }
+    [data-stagger] > * { opacity: 0; transform: translateY(22px); transition: opacity 0.65s cubic-bezier(.16,1,.3,1), transform 0.65s cubic-bezier(.16,1,.3,1); }
+    [data-stagger] > *.on { opacity: 1; transform: none; }
+
+    /* ---- DESKTOP CENTER ---- */
+    @media (min-width: 640px) {
+      nav { padding: 0 max(22px, calc((100vw - 580px) / 2)); }
+      .hero, .featured, .projects, footer, .stats-banner {
+        padding-left:  max(22px, calc((100vw - 580px) / 2));
+        padding-right: max(22px, calc((100vw - 580px) / 2));
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================================================================
+     CLIENT CONFIG — only touch these values per client
+================================================================ -->
+<script>
+const CONFIG = {
+  demoUrl: 'https://stocks-ahead-illustration-speaks.trycloudflare.com',
+  waNum:   '971504944664',
+  email:   'moealsarraj@gmail.com',
+};
+document.addEventListener('DOMContentLoaded', function () {
+  const wa = 'https://wa.me/' + CONFIG.waNum;
+  ['nav-wa','footer-wa'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.href = wa;
+  });
+  document.getElementById('footer-email').href = 'mailto:' + CONFIG.email;
+  document.getElementById('demo-btn').href = CONFIG.demoUrl;
+});
+</script>
+<!-- ============================================================== -->
+
+<nav>
+  <span class="nav-name">Mohammed Al&#8209;Sarraj</span>
+  <a class="nav-cta" id="nav-wa" href="#">Get in touch</a>
+</nav>
+
+<section class="stats-banner">
+  <div class="stat-item">
+    <span class="stat-num" data-count="47" data-suffix="+">47+</span>
+    <span class="stat-label">Apps Built</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num" data-count="12" data-suffix="">12</span>
+    <span class="stat-label">Industries</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num" data-count="3" data-suffix="">3</span>
+    <span class="stat-label">Countries</span>
+  </div>
+</section>
+
+<section class="hero">
+  <h1>Software that<br>actually ships.</h1>
+  <p class="hero-sub">AI-powered tools built end&#8209;to&#8209;end, from idea to working product.</p>
+</section>
+
+<section class="featured" data-reveal>
+  <p class="eyebrow">Featured</p>
+  <h2>AI Fitness Trainer</h2>
+  <p class="featured-sub">A personal coach that lives on your phone. Understands your goals, builds custom workouts, and tracks your progress over time.</p>
+  <div class="feat-pills">
+    <span class="feat-pill">AI Chat</span>
+    <span class="feat-pill">Workout Plans</span>
+    <span class="feat-pill">Progress Tracking</span>
+    <span class="feat-pill">Installs on iPhone</span>
+  </div>
+  <a class="btn-primary" id="demo-btn" href="#" target="_blank">
+    Open App <span class="btn-arr">↗</span>
+  </a>
+</section>
+
+<section class="projects" data-stagger>
+
+  <div class="project-item">
+    <p class="proj-cat">Legal AI</p>
+    <h3 class="proj-name">Contract Lens</h3>
+    <p class="proj-desc">Audits contracts against UAE law. 115 compliance checks across 9 legal domains, flags every risk with the exact article citation, and exports a full PDF report.</p>
+    <a class="btn-ghost" href="./contract-lens/">See Product ↗</a>
+  </div>
+
+  <div class="project-item">
+    <p class="proj-cat">Data Platform</p>
+    <h3 class="proj-name">Manara</h3>
+    <p class="proj-desc">An integrated data operations suite built for enterprise. ETL pipelines, data quality observatory, governance layer, and an AI assistant. All in one platform.</p>
+    <a class="btn-ghost" href="./manara/">See Product ↗</a>
+  </div>
+
+  <div class="project-item">
+    <p class="proj-cat">Operations Software</p>
+    <h3 class="proj-name">Qubtan</h3>
+    <p class="proj-desc">Built for a UAE maritime business. Encrypted records, role&#8209;based access, automated compliance alerts, and 16 integrated management modules.</p>
+    <a class="btn-ghost" href="./qubtan/">See Product ↗</a>
+  </div>
+
+  <div class="project-item">
+    <p class="proj-cat">Translation &amp; RTL</p>
+    <h3 class="proj-name">Tarjim</h3>
+    <p class="proj-desc">Audits any web project for RTL layout issues, translates UI strings to Arabic with contextual precision, and auto&#8209;fixes CSS/HTML problems. Verified against Arabic Bench metrics.</p>
+    <a class="btn-ghost" href="./tarjim/">See Product ↗</a>
+  </div>
+
+  <div class="project-item">
+    <p class="proj-cat">Autonomous Software</p>
+    <h3 class="proj-name">Masna</h3>
+    <p class="proj-desc">Autonomous product factory. Point it at a market and it scouts the space, picks the opportunity, writes the spec, builds the software, runs tests, and pushes to GitHub. No human in the loop.</p>
+    <a class="btn-ghost" href="./masna/">See Product ↗</a>
+  </div>
+
+</section>
+
+<footer data-reveal>
+  <div class="footer-l">
+    <span class="footer-name">Mohammed Al&#8209;Sarraj</span>
+    <span class="footer-co">Tarn Labs</span>
+  </div>
+  <div class="footer-links">
+    <a id="footer-wa" href="#">WhatsApp</a>
+    <a id="footer-email" href="#">Email</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Hero h1 line split
+  var h1 = document.querySelector('.hero h1');
+  if (h1) {
+    h1.innerHTML = h1.innerHTML.split('<br>').map(function (l, i) {
+      return '<span class="line"><span class="line-inner" style="--li:' + i + '">' + l + '</span></span>';
+    }).join('');
+  }
+
+  // Counter animation
+  function countUp(el) {
+    var target = parseInt(el.dataset.count, 10);
+    var suffix = el.dataset.suffix || '';
+    var dur = 1200, t0 = performance.now();
+    (function tick(now) {
+      var p = Math.min((now - t0) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(e * target) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  // Fire counters on load (stats-banner is above the fold)
+  window.addEventListener('load', function () {
+    document.querySelectorAll('[data-count]').forEach(function (el) { countUp(el); });
+  });
+
+  // Scroll reveal
+  var revObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var el = en.target;
+      if (el.dataset.stagger !== undefined) {
+        Array.from(el.children).forEach(function (child, i) {
+          setTimeout(function () { child.classList.add('on'); }, i * 100);
+        });
+      } else {
+        el.classList.add('on');
+      }
+      revObs.unobserve(el);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+  document.querySelectorAll('[data-reveal],[data-stagger]').forEach(function (el) { revObs.observe(el); });
+})();
+</script>
+
+</body>
+</html>
