@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Mohammed Al Sarraj — Data Governance & AI',
     description:
       'Senior Data Governance Engineer. 5 years across Qatar Central Bank, Abu Dhabi Executive Office, Dubai Police. Builder of Manarah.',
-    url: 'https://tarnlabs.dev',
+    url: 'https://tarn-labs.com',
     siteName: 'Mohammed Al Sarraj',
     images: [{ url: '/og.png', width: 1200, height: 630 }],
     type: 'website',

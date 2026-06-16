@@ -281,7 +281,7 @@ export default function CVPage() {
             <p>Dubai, UAE</p>
             <p>+971 50 494 4664</p>
             <p><a href="mailto:moealsarraj@gmail.com">moealsarraj@gmail.com</a></p>
-            <p><a href="https://tarnlabs.dev" target="_blank" rel="noopener noreferrer">tarnlabs.dev ↗</a></p>
+            <p><a href="https://tarn-labs.com" target="_blank" rel="noopener noreferrer">tarn-labs.com ↗</a></p>
           </div>
 
           <div className="sidebar-section">

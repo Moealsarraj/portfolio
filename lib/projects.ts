@@ -25,7 +25,7 @@ export const FEATURED_PROJECT: Project = {
     '30+ enterprise connectors (Snowflake, BigQuery, SAP HANA, Oracle, Azure Blob/SQL, Salesforce, Databricks, Redshift, S3…) behind a shared connector interface. Each component is an independent Flask service sharing a common auth, connector, and i18n layer via importable packages.',
   stack: ['Python', 'Flask', 'PostgreSQL', 'SQLAlchemy', 'Alembic', 'Claude API', 'SQLite'],
   status: 'demo',
-  liveUrl: 'https://demo.tarnlabs.dev',
+  liveUrl: 'https://demo.tarn-labs.com',
   ndmoAligned: true,
 }
 
@@ -53,7 +53,7 @@ export const DATA_TOOLS: Project[] = [
     architectureHighlight: 'Python Flask with Render deployment config. Seed-able demo data.',
     stack: ['Python', 'Flask', 'SQLite', 'Render'],
     status: 'live',
-    liveUrl: 'https://rased.tarnlabs.dev',
+    liveUrl: 'https://rased.tarn-labs.com',
     githubUrl: 'https://github.com/moealsarraj/rased',
   },
   {
@@ -67,7 +67,7 @@ export const DATA_TOOLS: Project[] = [
       'CLI + Flask web UI. Audits a running app via Playwright, then generates a diff patch and a quality report.',
     stack: ['Python', 'Flask', 'Claude API', 'Playwright', 'Arabic NLP'],
     status: 'live',
-    liveUrl: 'https://tarjim.tarnlabs.dev',
+    liveUrl: 'https://tarjim.tarn-labs.com',
   },
 ]
 
@@ -76,28 +76,28 @@ export const AI_SUITES = [
     name: 'BizIntel',
     count: 7,
     tools: ['Competitive Intel', 'Persona Studio', 'Meeting Distiller', 'Contract Lens', 'CSV Storyteller', 'Resume Match', 'Resume Forge'],
-    liveUrl: 'https://bizintel.tarnlabs.dev',
+    liveUrl: 'https://bizintel.tarn-labs.com',
     githubUrl: 'https://github.com/moealsarraj/bizintel',
   },
   {
     name: 'DevKit',
     count: 6,
     tools: ['Schema Detective', 'Test Forge', 'SQL Whisperer', 'Doc Forge', 'Changelog AI', 'Git Narrator'],
-    liveUrl: 'https://devkit.tarnlabs.dev',
+    liveUrl: 'https://devkit.tarn-labs.com',
     githubUrl: 'https://github.com/moealsarraj/devkit',
   },
   {
     name: 'AI Lab',
     count: 4,
     tools: ['Prompt Bench', 'Prompt Shield', 'Agent Builder', 'Arabic Bench'],
-    liveUrl: 'https://ailab.tarnlabs.dev',
+    liveUrl: 'https://ailab.tarn-labs.com',
     githubUrl: 'https://github.com/moealsarraj/ailab',
   },
   {
     name: 'ContentForge',
     count: 2,
     tools: ['Content Repurposer', 'AI Debate Arena'],
-    liveUrl: 'https://contentforge.tarnlabs.dev',
+    liveUrl: 'https://contentforge.tarn-labs.com',
     githubUrl: 'https://github.com/moealsarraj/contentforge',
   },
 ]
