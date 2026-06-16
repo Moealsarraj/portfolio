@@ -53,7 +53,7 @@ export const DATA_TOOLS: Project[] = [
     architectureHighlight: 'Python Flask with Render deployment config. Seed-able demo data.',
     stack: ['Python', 'Flask', 'SQLite', 'Render'],
     status: 'live',
-    liveUrl: 'https://rased.tarn-labs.com',
+    liveUrl: 'https://rased-ydk2.onrender.com',
     githubUrl: 'https://github.com/moealsarraj/rased',
   },
   {
@@ -67,7 +67,7 @@ export const DATA_TOOLS: Project[] = [
       'CLI + Flask web UI. Audits a running app via Playwright, then generates a diff patch and a quality report.',
     stack: ['Python', 'Flask', 'Claude API', 'Playwright', 'Arabic NLP'],
     status: 'live',
-    liveUrl: 'https://tarjim.tarn-labs.com',
+    liveUrl: 'https://tarjim-gvod.onrender.com',
   },
 ]
 
@@ -76,28 +76,28 @@ export const AI_SUITES = [
     name: 'BizIntel',
     count: 7,
     tools: ['Competitive Intel', 'Persona Studio', 'Meeting Distiller', 'Contract Lens', 'CSV Storyteller', 'Resume Match', 'Resume Forge'],
-    liveUrl: 'https://bizintel.tarn-labs.com',
+    liveUrl: 'https://bizintel-vrlr.onrender.com',
     githubUrl: 'https://github.com/moealsarraj/bizintel',
   },
   {
     name: 'DevKit',
     count: 6,
     tools: ['Schema Detective', 'Test Forge', 'SQL Whisperer', 'Doc Forge', 'Changelog AI', 'Git Narrator'],
-    liveUrl: 'https://devkit.tarn-labs.com',
+    liveUrl: 'https://devkit-lepz.onrender.com',
     githubUrl: 'https://github.com/moealsarraj/devkit',
   },
   {
     name: 'AI Lab',
     count: 4,
     tools: ['Prompt Bench', 'Prompt Shield', 'Agent Builder', 'Arabic Bench'],
-    liveUrl: 'https://ailab.tarn-labs.com',
+    liveUrl: 'https://ailab-xiua.onrender.com',
     githubUrl: 'https://github.com/moealsarraj/ailab',
   },
   {
     name: 'ContentForge',
     count: 2,
     tools: ['Content Repurposer', 'AI Debate Arena'],
-    liveUrl: 'https://contentforge.tarn-labs.com',
+    liveUrl: 'https://contentforge-9tu6.onrender.com',
     githubUrl: 'https://github.com/moealsarraj/contentforge',
   },
 ]
