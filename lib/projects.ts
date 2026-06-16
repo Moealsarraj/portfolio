@@ -25,7 +25,7 @@ export const FEATURED_PROJECT: Project = {
     '30+ enterprise connectors (Snowflake, BigQuery, SAP HANA, Oracle, Azure Blob/SQL, Salesforce, Databricks, Redshift, S3…) behind a shared connector interface. Each component is an independent Flask service sharing a common auth, connector, and i18n layer via importable packages.',
   stack: ['Python', 'Flask', 'PostgreSQL', 'SQLAlchemy', 'Alembic', 'Claude API', 'SQLite'],
   status: 'demo',
-  liveUrl: 'https://demo.tarn-labs.com',
+  liveUrl: 'https://manarah-portal.onrender.com',
   ndmoAligned: true,
 }
 
