@@ -278,10 +278,11 @@ export default function CVPage() {
 
           <div className="sidebar-section">
             <div className="sidebar-section-label">Contact</div>
-            <p>Dubai, UAE</p>
-            <p>+971 50 494 4664</p>
+            <p><a href="https://moealsarraj.com" target="_blank" rel="noopener noreferrer">moealsarraj.com ↗</a></p>
+            <p><a href="https://github.com/moealsarraj" target="_blank" rel="noopener noreferrer">github.com/moealsarraj ↗</a></p>
             <p><a href="mailto:moealsarraj@gmail.com">moealsarraj@gmail.com</a></p>
-            <p><a href="https://tarn-labs.com" target="_blank" rel="noopener noreferrer">tarn-labs.com ↗</a></p>
+            <p>+971 50 494 4664</p>
+            <p>Dubai, UAE</p>
           </div>
 
           <div className="sidebar-section">
@@ -347,7 +348,7 @@ export default function CVPage() {
             <strong>Senior Data Governance Engineer</strong> with five years at BBI Consultancy, working across
             GCC government clients: Qatar Central Bank, Abu Dhabi Executive Office, Dubai Police, and
             DCT. Core tools are Informatica CDGC, EDC, and Axon, plus Python for anything custom.
-            Outside client work I&apos;ve built <strong>19+ AI tools</strong> across four product suites and Manarah, a
+            Outside client work, I&apos;ve built <strong>19+ AI tools</strong> across four product suites, plus Manarah, a
             four-part data platform with its own LLM agent, written as a practical alternative to
             Informatica for GCC regulatory environments. Bilingual in Arabic and English, with most
             of my work touching Arabic NLP, RTL interfaces, and local compliance requirements.
@@ -422,7 +423,7 @@ export default function CVPage() {
             <div className="client-name">Abu Dhabi Executive Office (ADEO), UAE Federal · 2021 to 2024</div>
             <ul className="bullets">
               <li>Came in when ADEO had no DG framework at all. Over three years, built out the full stack in production: ETL pipelines, data quality rules, a business glossary, a data catalog, and a marketplace for cross-entity sharing. DQ scoring runs on live data.</li>
-              <li>Designed the federal Data Marketplace, used by <strong>30+ government entities</strong> clustered by operational mandate. Cross-entity data visibility went up <strong>60%</strong>. Built to the UAE National Data Strategy.</li>
+              <li>Designed the federal Data Marketplace, used by <strong>30+ government entities</strong> clustered by operational mandate. Cross-entity data visibility went up <strong>60%</strong>. Structured around the UAE National Data Strategy.</li>
               <li>Led the CDGC rollout with a cross-functional team. Cut data access bottlenecks by <strong>40%</strong> and finished ahead of schedule.</li>
             </ul>
 

@@ -22,8 +22,8 @@ export function Footer() {
         >
           github.com/moealsarraj
         </a>
-        <a href="/cv.pdf" download className="text-accent hover:text-accent-dark transition-colors">
-          Download CV
+        <a href="/cv" className="text-accent hover:text-accent-dark transition-colors">
+          View CV
         </a>
       </div>
     </footer>

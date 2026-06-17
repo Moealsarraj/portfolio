@@ -35,11 +35,10 @@ export function Nav() {
           Contact
         </a>
         <a
-          href="/cv.pdf"
-          download
+          href="/cv"
           className="text-[13px] px-3.5 py-1.5 border border-border rounded text-primary hover:border-accent transition-colors bg-card"
         >
-          CV ↓
+          CV →
         </a>
       </div>
     </nav>

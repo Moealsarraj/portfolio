@@ -35,11 +35,10 @@ export function Hero() {
 
           <div className="flex flex-wrap gap-3">
             <a
-              href="/cv.pdf"
-              download
+              href="/cv"
               className="text-sm px-5 py-2.5 bg-accent text-white font-semibold rounded-full hover:bg-accent-dark transition-colors"
             >
-              Download CV
+              View CV
             </a>
             <a
               href="https://github.com/moealsarraj"
