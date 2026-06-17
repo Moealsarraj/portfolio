@@ -31,7 +31,7 @@ export default function CVPage() {
           min-width: 230px;
           background: #1e2a38;
           color: #c8d4de;
-          padding: 28px 20px;
+          padding: 22px 20px;
         }
 
         .sidebar-name {
@@ -78,7 +78,7 @@ export default function CVPage() {
         .portfolio-btn:hover { background: #3a6fa5; }
 
         .sidebar-section {
-          margin-bottom: 16px;
+          margin-bottom: 13px;
         }
 
         .sidebar-section-label {
@@ -151,21 +151,21 @@ export default function CVPage() {
         /* ── MAIN CONTENT ── */
         .main {
           flex: 1;
-          padding: 28px 30px;
+          padding: 22px 28px;
           background: #fff;
         }
 
         .summary {
           font-size: 11.5px;
-          line-height: 1.65;
+          line-height: 1.6;
           color: #2a2a2a;
-          margin-bottom: 18px;
+          margin-bottom: 13px;
         }
 
         .summary strong { font-weight: 600; }
 
         .section {
-          margin-bottom: 16px;
+          margin-bottom: 12px;
         }
 
         .section-heading {
@@ -299,9 +299,7 @@ export default function CVPage() {
             <div className="cert-item">CDMP — Associate</div>
             <div className="cert-item">DAMA Data Management Fundamentals</div>
             <div className="cert-item">Informatica Data Privacy Governance</div>
-            <div className="cert-item">Data Governance &amp; Privacy: Governance for Analytics</div>
-            <div className="cert-item">Data Governance &amp; Privacy: Data Democratization</div>
-            <div className="cert-item">Data Governance &amp; Privacy, Foundation</div>
+            <div className="cert-item">Data Governance &amp; Privacy — Foundation · Analytics · Democratization</div>
             <div className="cert-item">Snowflake SPN: Sales &amp; Technical Sales</div>
           </div>
 
@@ -321,12 +319,10 @@ export default function CVPage() {
         {/* ── MAIN CONTENT ── */}
         <main className="main">
           <p className="summary">
-            <strong>Senior Data Governance Engineer</strong> with five years at BBI Consultancy across GCC government clients:
-            Qatar Central Bank, Abu Dhabi Executive Office, Dubai Police, and DCT. Core tools are Informatica CDGC, EDC, and Axon,
-            plus Python for anything custom. Outside client work, I&apos;ve built <strong>19+ AI tools</strong> across four product
-            suites, plus <strong>Manarah</strong> — a four-part data platform with its own LLM agent, built as a practical alternative
-            to Informatica for GCC regulatory environments. Bilingual in Arabic and English, with most of my work touching Arabic NLP,
-            RTL interfaces, and local compliance requirements.
+            <strong>Senior Data Governance Engineer</strong> with five years at BBI Consultancy across six GCC government and
+            enterprise clients: ADEO, Qatar Central Bank, Dubai Police, DCT, SCAD, and YBA Kanoo. Core tools are Informatica CDGC,
+            EDC, and Axon. Outside client work, I&apos;ve built <strong>19+ AI tools</strong> across four live product suites, plus{' '}
+            <strong>Manarah</strong> — a four-part data platform built as a practical alternative to Informatica for GCC environments.
           </p>
 
           <div className="section">
@@ -363,8 +359,7 @@ export default function CVPage() {
                 <span className="suite-label">BizIntel</span> (7) — Competitive Intel, Persona Studio, Meeting Distiller, Contract Lens, CSV Storyteller, Resume Match, Resume Forge.{' '}
                 <span className="suite-label">DevKit</span> (6) — Schema Detective, Test Forge, SQL Whisperer, Doc Forge, Changelog AI, Git Narrator.{' '}
                 <span className="suite-label">AI Lab</span> (4) — Prompt Bench, Prompt Shield, Agent Builder, Arabic Bench.{' '}
-                <span className="suite-label">ContentForge</span> (2) — Content Repurposer, AI Debate Arena.{' '}
-                All four suites are live and publicly accessible. Source on GitHub.
+                <span className="suite-label">ContentForge</span> (2) — Content Repurposer, AI Debate Arena. All live at moealsarraj.com.
               </p>
             </div>
           </div>
@@ -376,7 +371,7 @@ export default function CVPage() {
               <span className="job-title">Senior Data Governance Engineer <em>at BBI Consultancy</em></span>
               <span className="job-meta">2021 – present · Dubai</span>
             </div>
-            <div className="job-subtitle">BBI is a boutique GCC data governance consultancy. As lead technical consultant, I was the primary delivery resource on all six engagements below — from architecture through implementation and enablement.</div>
+            <div className="job-subtitle">Boutique GCC data governance consultancy. Lead technical consultant — primary delivery resource on all six engagements below.</div>
 
             <ExperienceTabs />
           </div>
