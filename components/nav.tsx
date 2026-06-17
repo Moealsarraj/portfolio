@@ -14,12 +14,12 @@ export function Nav() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 h-12 px-6 flex items-center justify-between transition-colors ${
-        scrolled ? 'bg-bg border-b border-border' : 'bg-transparent'
+        scrolled ? 'bg-card border-b border-border shadow-sm' : 'bg-transparent'
       }`}
     >
       <div className="flex items-center gap-2.5">
         <div
-          className="w-5 h-5 rounded flex items-center justify-center text-bg text-[10px] font-bold flex-shrink-0"
+          className="w-5 h-5 rounded flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0"
           style={{ background: '#f59e0b' }}
         >
           M
@@ -37,7 +37,7 @@ export function Nav() {
         <a
           href="/cv.pdf"
           download
-          className="text-[13px] px-3.5 py-1.5 border border-border rounded text-primary hover:border-accent transition-colors"
+          className="text-[13px] px-3.5 py-1.5 border border-border rounded text-primary hover:border-accent transition-colors bg-card"
         >
           CV ↓
         </a>

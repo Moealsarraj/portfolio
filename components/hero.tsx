@@ -1,41 +1,32 @@
 export function Hero() {
   return (
     <section className="pt-32 pb-20 px-6 max-w-5xl mx-auto">
-      <div className="grid lg:grid-cols-[1fr_340px] gap-10 items-start">
+      <div className="grid lg:grid-cols-[1fr_320px] gap-10 items-start">
 
         {/* Left: identity */}
         <div>
           <div className="flex items-center gap-2 mb-8">
             <span
               className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-              style={{ background: '#34d399', boxShadow: '0 0 7px #34d399' }}
+              style={{ background: '#10b981', boxShadow: '0 0 6px #10b981' }}
             />
-            <span
-              className="text-[10px] uppercase tracking-[0.2em]"
-              style={{ color: '#6b7280' }}
-            >
+            <span className="text-[10px] uppercase tracking-[0.2em] text-muted2">
               Available · Dubai, UAE
             </span>
           </div>
 
           <h1
             className="font-bold text-primary leading-[0.97] tracking-[-0.03em] mb-3"
-            style={{ fontSize: 'clamp(46px, 6.5vw, 70px)' }}
+            style={{ fontSize: 'clamp(44px, 6vw, 68px)' }}
           >
             Mohammed<br />Al Sarraj
           </h1>
 
-          <p
-            className="text-[11px] uppercase tracking-[0.18em] mb-8 font-medium"
-            style={{ color: '#f59e0b' }}
-          >
+          <p className="text-[11px] uppercase tracking-[0.18em] mb-8 font-medium text-accent">
             Senior Data Governance Engineer · AI Systems
           </p>
 
-          <p
-            className="text-[15px] leading-relaxed max-w-md mb-10"
-            style={{ color: '#9ca3af' }}
-          >
+          <p className="text-[15px] leading-relaxed max-w-md mb-10 text-muted">
             5 years across GCC government — Qatar Central Bank, Abu Dhabi
             Executive Office, Dubai Police. Built Manarah: an AI-native
             alternative to the Informatica stack, NDMO P1–P3 aligned.
@@ -45,7 +36,7 @@ export function Hero() {
             <a
               href="/cv.pdf"
               download
-              className="text-sm px-5 py-2.5 bg-accent text-bg font-semibold rounded-full hover:bg-accent-dark transition-colors"
+              className="text-sm px-5 py-2.5 bg-accent text-white font-semibold rounded-full hover:bg-accent-dark transition-colors"
             >
               Download CV
             </a>
@@ -67,29 +58,16 @@ export function Hero() {
         </div>
 
         {/* Right: profile record card */}
-        <div
-          className="rounded-xl overflow-hidden border border-border flex-shrink-0"
-          style={{ background: '#0f1a2e' }}
+        <div className="bg-card rounded-xl border border-border overflow-hidden flex-shrink-0"
+          style={{ boxShadow: '0 1px 8px rgba(0,0,0,0.07)' }}
         >
           {/* Card header */}
-          <div
-            className="px-5 py-3 border-b border-border flex items-center justify-between"
-            style={{ background: '#0f1624' }}
-          >
-            <span
-              className="text-[9px] uppercase tracking-[0.16em]"
-              style={{ color: '#4b5563' }}
-            >
+          <div className="px-5 py-3 border-b border-border flex items-center justify-between bg-bg">
+            <span className="text-[9px] uppercase tracking-[0.16em] text-muted2">
               engineer.profile
             </span>
-            <span
-              className="text-[9px] flex items-center gap-1.5"
-              style={{ color: '#34d399' }}
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                style={{ background: '#34d399' }}
-              />
+            <span className="text-[9px] flex items-center gap-1.5 text-success">
+              <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-success" />
               active
             </span>
           </div>
@@ -105,13 +83,10 @@ export function Hero() {
               { field: 'languages',  value: 'Arabic (native) · English (fluent)' },
             ].map(({ field, value }) => (
               <div key={field} className="flex gap-4 text-[12px]">
-                <span
-                  className="font-mono min-w-[88px] shrink-0"
-                  style={{ color: '#4b5563' }}
-                >
+                <span className="font-mono min-w-[88px] shrink-0 text-muted2">
                   {field}
                 </span>
-                <span style={{ color: '#9ca3af' }}>{value}</span>
+                <span className="text-muted">{value}</span>
               </div>
             ))}
           </div>
@@ -125,18 +100,12 @@ export function Hero() {
             ].map(({ label, value }, i) => (
               <div
                 key={label}
-                className={`px-4 py-3.5 ${i < 2 ? 'border-r border-border' : ''}`}
+                className={`px-4 py-3.5 bg-bg ${i < 2 ? 'border-r border-border' : ''}`}
               >
-                <div
-                  className="text-[9px] uppercase tracking-[0.1em] mb-1.5"
-                  style={{ color: '#4b5563' }}
-                >
+                <div className="text-[9px] uppercase tracking-[0.1em] mb-1.5 text-muted2">
                   {label}
                 </div>
-                <div
-                  className="text-xl font-semibold leading-none"
-                  style={{ color: '#f59e0b' }}
-                >
+                <div className="text-xl font-semibold leading-none text-accent">
                   {value}
                 </div>
               </div>

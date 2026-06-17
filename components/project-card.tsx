@@ -3,7 +3,7 @@ import type { Project } from '@/lib/projects'
 export function ProjectCard({ project }: { project: Project }) {
   const { name, category, description, architectureHighlight, stack, status, liveUrl } = project
   return (
-    <div className="bg-card border border-border rounded-xl p-6 hover:border-accent/30 transition-colors flex flex-col">
+    <div className="bg-card border border-border rounded-xl p-6 hover:border-accent/40 transition-colors flex flex-col" style={{ boxShadow: '0 1px 4px rgba(0,0,0,0.05)' }}>
       <div className="flex items-center justify-between mb-3">
         <span className="text-xs text-accent font-medium uppercase tracking-wide">{category}</span>
         {status === 'live' && (
