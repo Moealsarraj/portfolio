@@ -25,6 +25,9 @@ export function Footer() {
         <a href="/cv" className="text-accent hover:text-accent-dark transition-colors">
           View CV
         </a>
+        <a href="/cv.pdf" download className="text-muted hover:text-primary transition-colors">
+          Download PDF
+        </a>
       </div>
     </footer>
   )
