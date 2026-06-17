@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { PrintButton } from './print-button'
+import { ExperienceTabs } from './experience-tabs'
 
 export const metadata: Metadata = {
   title: 'CV — Mohammed Al Sarraj',
@@ -18,7 +19,6 @@ export default function CVPage() {
 
         .cv-root {
           display: flex;
-          align-items: flex-start;
           max-width: 960px;
           margin: 0 auto;
           font-size: 11.5px;
@@ -54,21 +54,28 @@ export default function CVPage() {
           letter-spacing: 0.13em;
           color: #7eb3d8;
           text-transform: uppercase;
-          margin-bottom: 22px;
+          margin-bottom: 18px;
           line-height: 1.6;
         }
 
-        .portfolio-link {
-          display: block;
-          font-size: 13px;
-          font-weight: 700;
-          color: #a8d4f0;
+        .portfolio-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          background: #2d5a8e;
+          color: #fff;
           text-decoration: none;
-          margin-bottom: 16px;
+          font-size: 12px;
+          font-weight: 700;
+          padding: 9px 14px;
+          border-radius: 6px;
+          margin-bottom: 20px;
           letter-spacing: 0.01em;
+          transition: background 0.15s;
         }
 
-        .portfolio-link:hover { color: #fff; }
+        .portfolio-btn:hover { background: #3a6fa5; }
 
         .sidebar-section {
           margin-bottom: 16px;
@@ -197,34 +204,7 @@ export default function CVPage() {
           font-size: 10.5px;
           color: #555;
           font-style: italic;
-          margin-bottom: 7px;
-        }
-
-        .client-name {
-          font-weight: 600;
-          font-size: 11px;
-          color: #1a1a1a;
-          margin-top: 8px;
-          margin-bottom: 3px;
-        }
-
-        .bullets { list-style: none; padding: 0; }
-
-        .bullets li {
-          font-size: 11px;
-          color: #333;
-          padding-left: 12px;
-          position: relative;
-          margin-bottom: 3px;
-          line-height: 1.5;
-        }
-
-        .bullets li::before {
-          content: '›';
-          position: absolute;
-          left: 0;
-          color: #2d5a8e;
-          font-weight: 700;
+          margin-bottom: 10px;
         }
 
         .project-name {
@@ -255,7 +235,6 @@ export default function CVPage() {
         }
 
         .project-desc strong { font-weight: 600; color: #1a1a1a; }
-
         .suite-label { font-weight: 600; color: #2d5a8e; }
 
         @media print {
@@ -274,8 +253,8 @@ export default function CVPage() {
           </div>
           <div className="sidebar-title">Data Governance &amp; AI Engineering</div>
 
-          <a className="portfolio-link" href="https://moealsarraj.com" target="_blank" rel="noopener noreferrer">
-            moealsarraj.com ↗
+          <a className="portfolio-btn" href="https://moealsarraj.com" target="_blank" rel="noopener noreferrer">
+            🌐 View Portfolio
           </a>
 
           <div className="sidebar-section">
@@ -339,7 +318,6 @@ export default function CVPage() {
 
         {/* ── MAIN CONTENT ── */}
         <main className="main">
-          {/* Summary */}
           <p className="summary">
             <strong>Senior Data Governance Engineer</strong> with five years at BBI Consultancy across GCC government clients:
             Qatar Central Bank, Abu Dhabi Executive Office, Dubai Police, and DCT. Core tools are Informatica CDGC, EDC, and Axon,
@@ -349,7 +327,6 @@ export default function CVPage() {
             RTL interfaces, and local compliance requirements.
           </p>
 
-          {/* Education */}
           <div className="section">
             <div className="section-heading">Education</div>
             <div className="edu-row">
@@ -361,7 +338,6 @@ export default function CVPage() {
             </div>
           </div>
 
-          {/* Projects */}
           <div className="section">
             <div className="section-heading">Personal Projects · 2025 to 2026</div>
 
@@ -370,10 +346,10 @@ export default function CVPage() {
                 Manarah Suite <span className="badge">Flagship</span>
               </div>
               <p className="project-desc">
-                A four-part data platform I built as a practical alternative to Informatica.{' '}
+                A four-part data platform built as a practical alternative to Informatica.{' '}
                 <strong>Wasit</strong> handles ETL with 30+ connectors, <strong>Mizan</strong> runs data quality scoring,{' '}
                 <strong>Amin</strong> manages governance and catalog, and <strong>Manarah AI</strong> is a chat interface into all three.
-                UAE PDPL compliance controls sit inside each pipeline step, not layered on at the end.
+                UAE PDPL compliance controls sit inside each pipeline step.
               </p>
             </div>
 
@@ -390,7 +366,6 @@ export default function CVPage() {
             </div>
           </div>
 
-          {/* Experience */}
           <div className="section">
             <div className="section-heading">Experience</div>
 
@@ -400,24 +375,7 @@ export default function CVPage() {
             </div>
             <div className="job-subtitle">Lead consultant on multi-year governance engagements for GCC government bodies and financial regulators.</div>
 
-            <div className="client-name">Abu Dhabi Executive Office (ADEO) · 2021 – 2024</div>
-            <ul className="bullets">
-              <li>Came in when ADEO had no DG framework at all. Over three years, built out the full stack in production: ETL pipelines, data quality rules, a business glossary, a data catalog, and a metadata lineage model covering the full asset lifecycle.</li>
-              <li>Designed the federal Data Marketplace, used by <strong>30+ government entities</strong> clustered by operational mandate. Cross-entity data visibility up <strong>60%</strong>. Structured around the UAE National Data Strategy.</li>
-              <li>Led the CDGC rollout with a cross-functional team. Cut data access bottlenecks by <strong>40%</strong> and finished ahead of schedule.</li>
-            </ul>
-
-            <div className="client-name">Qatar Central Bank (QCB)</div>
-            <ul className="bullets">
-              <li>Built QCB&apos;s business glossary from scratch in Informatica Axon. The core work was running stakeholder sessions to draw a clear line between organisation-wide business terms and attribute-level definitions — getting that distinction right is what keeps a glossary usable over time. Integrated the finished glossary into QCB&apos;s Tableau environment so analysts could trace reports back to their governing KPIs and business terms.</li>
-            </ul>
-
-            <div className="client-name">Dubai Police · Department of Culture &amp; Tourism Abu Dhabi · SCAD</div>
-            <ul className="bullets">
-              <li>Dubai Police: mapped <strong>200+ critical data elements</strong> and pulled 10+ legacy databases into a unified catalog. Manual data reconciliation dropped by 30%.</li>
-              <li>DCT: redesigned the governance operating model and delivered hands-on Axon and EDC training for 50+ stakeholders, timed to the Abu Dhabi Digital Transformation Policy rollout.</li>
-              <li>SCAD: tightened data quality controls on statistical outputs, reaching 95% accuracy and bringing data handling practices in line with GDPR requirements.</li>
-            </ul>
+            <ExperienceTabs />
           </div>
         </main>
       </div>
