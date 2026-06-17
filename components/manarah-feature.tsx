@@ -73,10 +73,9 @@ export function ManarahFeature() {
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Manarah Suite</h2>
           <p className="text-muted text-base leading-relaxed max-w-2xl">
-            A four-component data platform covering the full management lifecycle — ETL (Wasit),
-            Data Quality (Mizan), Governance (Amin), and an LLM agent (Manarah AI) that drives
-            all three from a chat interface. Compliance controls are built into each layer, not
-            added as a separate step.
+            Four services behind a single portal. Wasit moves data, Mizan checks it, Amin governs
+            it, and Manarah AI gives you a chat interface into all three. Compliance rules for NDMO
+            and UAE PDPL run inside each pipeline step, not at the end.
           </p>
         </div>
 
@@ -102,14 +101,14 @@ export function ManarahFeature() {
             </p>
             <ArchDiagram />
             <p className="text-xs text-muted mt-4 leading-relaxed">
-              Each component runs as an independent gunicorn process sharing a single signed
+              Each component runs as an independent gunicorn process. They share a single signed
               session cookie via a common{' '}
               <code className="text-[#888] bg-bg px-1 rounded text-[11px]">SECRET_KEY</code>. The
               portal reverse-proxies{' '}
               <code className="text-[#888] bg-bg px-1 rounded text-[11px]">/wasit/*</code>,{' '}
               <code className="text-[#888] bg-bg px-1 rounded text-[11px]">/mizan/*</code>, and{' '}
               <code className="text-[#888] bg-bg px-1 rounded text-[11px]">/amin/*</code> to
-              internal processes — one URL, four services.
+              internal processes. One URL, four services.
             </p>
           </div>
         </div>

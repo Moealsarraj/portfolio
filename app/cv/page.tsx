@@ -344,14 +344,13 @@ export default function CVPage() {
         <main className="main">
           {/* Summary */}
           <p className="summary">
-            <strong>Senior Data Governance Engineer</strong> with 5 years across major GCC clients including
-            Qatar Central Bank, Abu Dhabi Executive Office, Dubai Police, and DCT, specializing in
-            Informatica CDGC, EDC, and Axon. Independently designed and shipped a public
-            portfolio of <strong>19 AI-powered tools</strong> across four product suites, plus Manarah, an AI-native
-            data management platform with an embedded LLM agent. Bilingual (Arabic and
-            English), focused on regional problems: Arabic NLP, RTL localization, and GCC
-            regulatory tooling. Currently building NDMO-aligned tooling with UAE PDPL and Abu Dhabi
-            Digital Transformation Policy controls embedded at the pipeline layer.
+            <strong>Senior Data Governance Engineer</strong> with five years at BBI Consultancy, working across
+            GCC government clients: Qatar Central Bank, Abu Dhabi Executive Office, Dubai Police, and
+            DCT. Core tools are Informatica CDGC, EDC, and Axon, plus Python for anything custom.
+            Outside client work I&apos;ve built <strong>19+ AI tools</strong> across four product suites and Manarah, a
+            four-part data platform with its own LLM agent, written as a practical alternative to
+            Informatica for GCC regulatory environments. Bilingual in Arabic and English, with most
+            of my work touching Arabic NLP, RTL interfaces, and local compliance requirements.
           </p>
 
           {/* Education */}
@@ -375,11 +374,9 @@ export default function CVPage() {
                 Manarah Suite <span className="badge">Flagship</span>
               </div>
               <p className="project-desc">
-                AI-native, four-component alternative to the Informatica stack. <strong>NDMO P1–P3 aligned</strong>, with UAE PDPL and regional
-                data-law checks built directly into the ETL, DQ, and governance lifecycle rather than
-                handled as a separate compliance layer. Components: <strong>Wasit</strong> (ETL), <strong>Mizan</strong> (Data Quality),{' '}
-                <strong>Amin</strong> (Data Governance), and <strong>Manarah AI</strong>, an LLM agent that runs the full data management lifecycle
-                from a chat UI.
+                A four-part data platform I built as a practical alternative to Informatica. <strong>Wasit</strong> handles ETL with 30+ connectors,{' '}
+                <strong>Mizan</strong> runs data quality scoring, <strong>Amin</strong> manages governance and catalog, and <strong>Manarah AI</strong> is a chat
+                interface into all three. Compliance controls for UAE PDPL and local data regulations sit inside each pipeline step, not layered on at the end.
               </p>
             </div>
 
@@ -424,21 +421,21 @@ export default function CVPage() {
             {/* ADEO first */}
             <div className="client-name">Abu Dhabi Executive Office (ADEO), UAE Federal · 2021 to 2024</div>
             <ul className="bullets">
-              <li>Built ADEO's Data Governance capability from the ground up. Joined when no DG framework was in place, and over three years delivered a complete end-to-end Data Management lifecycle now operating in production: ETL, Data Quality, Cataloging, Governance, and Marketplace publishing, with DQ measures applied on live data.</li>
-              <li>Architected the federal Data Marketplace, enabling secure data sharing across <strong>30+ government entities</strong> grouped into clusters by shared mandates and operational domains. Cross-entity data visibility improved by <strong>60%</strong>. Framework was aligned to the UAE National Data Strategy.</li>
-              <li>Led a cross-functional team to deploy CDGC, cutting data access bottlenecks by <strong>40%</strong> and delivering 100% of contracted scope ahead of schedule.</li>
+              <li>Came in when ADEO had no DG framework at all. Over three years, built out the full stack in production: ETL pipelines, data quality rules, a business glossary, a data catalog, and a marketplace for cross-entity sharing. DQ scoring runs on live data.</li>
+              <li>Designed the federal Data Marketplace, used by <strong>30+ government entities</strong> clustered by operational mandate. Cross-entity data visibility went up <strong>60%</strong>. Built to the UAE National Data Strategy.</li>
+              <li>Led the CDGC rollout with a cross-functional team. Cut data access bottlenecks by <strong>40%</strong> and finished ahead of schedule.</li>
             </ul>
 
             <div className="client-name">Qatar Central Bank (QCB)</div>
             <ul className="bullets">
-              <li>Designed and delivered an integration between QCB's Tableau and Informatica Axon environments, allowing business and governance users to find reports through their underlying KPIs and associated glossary terms. Replaced a fragmented BI estate with a governed, navigable data landscape.</li>
+              <li>Built QCB&apos;s business glossary from scratch in Informatica Axon. The foundational work was running sessions with stakeholders to establish the line between a business glossary term (meaning that applies across the organisation, independent of any system) and an attribute-level definition (documentation tied to a specific column or field). Getting that distinction right is what keeps a glossary usable over time. Integrated the finished glossary into QCB&apos;s Tableau environment so users could trace reports back to their underlying KPIs and governing terms.</li>
             </ul>
 
             <div className="client-name">Dubai Police · Department of Culture &amp; Tourism Abu Dhabi · SCAD</div>
             <ul className="bullets">
-              <li>Dubai Police: defined <strong>200+ critical data elements</strong> and integrated 10+ legacy databases into a unified catalog, contributing to a 30% reduction in manual data reconciliation.</li>
-              <li>DCT: re-engineered the data governance operating model and delivered an enterprise-wide Axon and EDC training program to 50+ stakeholders, accelerating compliance with the Abu Dhabi Digital Transformation Policy.</li>
-              <li>SCAD: optimized data quality controls, achieving 95% accuracy on statistical outputs and supporting GDPR-aligned data handling.</li>
+              <li>Dubai Police: mapped <strong>200+ critical data elements</strong> and pulled 10+ legacy databases into a single catalog. Manual data reconciliation dropped by 30%.</li>
+              <li>DCT: redesigned the governance operating model, then ran hands-on Axon and EDC training for 50+ stakeholders, timed to support the Abu Dhabi Digital Transformation Policy rollout.</li>
+              <li>SCAD: tightened data quality controls on statistical outputs, reaching 95% accuracy and bringing data handling practices in line with GDPR requirements.</li>
             </ul>
           </div>
         </main>

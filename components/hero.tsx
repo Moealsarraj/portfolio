@@ -27,9 +27,10 @@ export function Hero() {
           </p>
 
           <p className="text-[15px] leading-relaxed max-w-md mb-10 text-muted">
-            5 years across GCC government — Qatar Central Bank, Abu Dhabi
-            Executive Office, Dubai Police. Built Manarah: an AI-native
-            alternative to the Informatica stack, NDMO P1–P3 aligned.
+            Five years as a data governance engineer at BBI Consultancy, working
+            across GCC government clients: Qatar Central Bank, Abu Dhabi Executive
+            Office, Dubai Police. On my own time, I built Manarah, a practical
+            alternative to the Informatica stack.
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -78,7 +79,7 @@ export function Hero() {
               { field: 'role',       value: 'Data Governance & AI Systems' },
               { field: 'stack',      value: 'Informatica CDGC · Claude API · Python' },
               { field: 'location',   value: 'Dubai, UAE' },
-              { field: 'open_to',    value: 'Abu Dhabi · Full-time' },
+              { field: 'open_to',    value: 'Full-time' },
               { field: 'compliance', value: 'NDMO P1–P3 · UAE PDPL' },
               { field: 'languages',  value: 'Arabic (native) · English (fluent)' },
             ].map(({ field, value }) => (
@@ -94,9 +95,9 @@ export function Hero() {
           {/* Stats row */}
           <div className="grid grid-cols-3 border-t border-border">
             {[
-              { label: 'Experience', value: '5y' },
-              { label: 'AI Tools',   value: '19' },
-              { label: 'GCC Clients', value: '4+' },
+              { label: 'Experience', value: '5y+' },
+              { label: 'AI Tools Shipped', value: '19+' },
+              { label: 'GCC Clients', value: '5+' },
             ].map(({ label, value }, i) => (
               <div
                 key={label}
