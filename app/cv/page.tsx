@@ -20,7 +20,6 @@ export default function CVPage() {
         .cv-root {
           display: flex;
           max-width: 960px;
-          min-height: 100vh;
           margin: 0 auto;
           font-size: 12px;
           line-height: 1.55;
@@ -242,7 +241,7 @@ export default function CVPage() {
           .no-print { display: none !important; }
           body { background: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
           @page { margin: 0; size: A4; }
-          .cv-root { max-width: 100%; min-height: 100vh; }
+          .cv-root { max-width: 100%; }
           .exp-panel { display: block !important; margin-bottom: 8px !important; }
         }
       `}</style>
