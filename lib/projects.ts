@@ -20,7 +20,7 @@ export const FEATURED_PROJECT: Project = {
   category: 'Data Platform',
   tagline: 'A practical alternative to the Informatica stack, built for GCC regulatory environments',
   description:
-    'Four services behind a single portal. Wasit handles ETL with 30+ connectors, Mizan runs data quality scoring, Amin manages governance and catalog, and Manarah AI is a chat interface into all three. Compliance controls for UAE PDPL and local data regulations sit inside each pipeline step, not layered on at the end.',
+    'Four services behind a single portal. Wasit handles ETL with 30+ connectors, Mizan runs data quality scoring, Amin manages governance and catalog, and Manarah AI is a chat interface into all three. Compliance controls for UAE PDPL and local data regulations sit inside each pipeline step, not layered on at the end. Demo login: demo / demo123.',
   architectureHighlight:
     '30+ enterprise connectors (Snowflake, BigQuery, SAP HANA, Oracle, Azure Blob/SQL, Salesforce, Databricks, Redshift, S3…) behind a shared connector interface. Each component is an independent Flask service sharing a common auth, connector, and i18n layer via importable packages.',
   stack: ['Python', 'Flask', 'PostgreSQL', 'SQLAlchemy', 'Alembic', 'Claude API', 'SQLite'],
