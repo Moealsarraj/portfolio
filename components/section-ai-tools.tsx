@@ -4,7 +4,7 @@ export function SectionAiTools() {
   return (
     <section className="px-6 pb-16 max-w-3xl mx-auto">
       <h2 className="text-xs text-muted uppercase tracking-widest mb-2">AI Tools Portfolio</h2>
-      <p className="text-muted text-sm mb-8">19 tools across 4 suites — all built with Claude API + Python Flask.</p>
+      <p className="text-muted text-sm mb-8">19 tools across 4 suites, all built with Claude API and Python Flask.</p>
       <div className="grid sm:grid-cols-2 gap-4">
         {AI_SUITES.map((suite) => (
           <div key={suite.name} className="bg-card border border-border rounded-xl p-6 hover:border-accent/30 transition-colors">

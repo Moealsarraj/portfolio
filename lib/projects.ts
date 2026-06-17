@@ -18,9 +18,9 @@ export const FEATURED_PROJECT: Project = {
   slug: 'manarah',
   name: 'Manarah Suite',
   category: 'Data Platform',
-  tagline: 'AI-native alternative to the Informatica stack',
+  tagline: 'A practical alternative to the Informatica stack, built for GCC regulatory environments',
   description:
-    'Four-component platform covering the full data management lifecycle — ETL (Wasit), Data Quality (Mizan), Governance (Amin), and an LLM agent (Manarah AI) that runs all three from a chat UI. UAE PDPL and NDMO P1–P3 controls are built into each layer, not bolted on as a separate compliance step.',
+    'Four services behind a single portal. Wasit handles ETL with 30+ connectors, Mizan runs data quality scoring, Amin manages governance and catalog, and Manarah AI is a chat interface into all three. Compliance controls for UAE PDPL and local data regulations sit inside each pipeline step, not layered on at the end.',
   architectureHighlight:
     '30+ enterprise connectors (Snowflake, BigQuery, SAP HANA, Oracle, Azure Blob/SQL, Salesforce, Databricks, Redshift, S3…) behind a shared connector interface. Each component is an independent Flask service sharing a common auth, connector, and i18n layer via importable packages.',
   stack: ['Python', 'Flask', 'PostgreSQL', 'SQLAlchemy', 'Alembic', 'Claude API', 'SQLite'],
@@ -49,7 +49,7 @@ export const DATA_TOOLS: Project[] = [
     category: 'Social Analytics',
     tagline: 'Social media analytics platform',
     description:
-      'Part of the Manara suite. Tracks and analyses social media engagement, trends, and audience data. Deployed on Render.',
+      'Tracks and analyses social media engagement, trends, and audience data across platforms. Deployed on Render with seed-able demo data.',
     architectureHighlight: 'Python Flask with Render deployment config. Seed-able demo data.',
     stack: ['Python', 'Flask', 'SQLite', 'Render'],
     status: 'live',
@@ -121,7 +121,7 @@ export const OTHER_PROJECTS: Project[] = [
     category: 'Autonomous AI',
     tagline: 'Autonomous product factory',
     description:
-      'One run = one new developer tool researched, built, tested, and pushed to GitHub. An agentic pipeline that goes from idea to shipped repo without human intervention.',
+      'One run produces a new developer tool: researched, built, tested, and pushed to GitHub. A fully automated pipeline that goes from idea to shipped repo.',
     architectureHighlight:
       'Multi-stage pipeline: research → spec → scaffold → implement → test → git push. Each stage is a distinct function called sequentially by a factory orchestrator.',
     stack: ['Python', 'Claude API', 'GitHub API', 'Flask'],
@@ -142,7 +142,7 @@ export const OTHER_PROJECTS: Project[] = [
     slug: 'virb',
     name: 'Virb Thrift',
     category: 'Marketplace',
-    tagline: 'Thrift marketplace — Next.js + Turborepo + Supabase',
+    tagline: 'Thrift marketplace built with Next.js, Turborepo, and Supabase',
     description:
       'Full-stack thrift marketplace with a Turborepo monorepo containing the buyer app, seller app, and shared packages. Supabase for auth and database.',
     architectureHighlight: 'Turborepo monorepo with shared UI and types packages. Supabase RLS policies for multi-tenant data isolation.',
