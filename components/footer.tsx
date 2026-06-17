@@ -1,7 +1,12 @@
 export function Footer() {
   return (
-    <footer id="contact" className="px-6 py-12 max-w-3xl mx-auto border-t border-border">
-      <p className="text-muted text-sm mb-4">Mohammed Al Sarraj · <span className="text-accent">Tarn Labs</span></p>
+    <footer id="contact" className="px-6 py-12 max-w-5xl mx-auto border-t border-border">
+      <p
+        className="text-[11px] uppercase tracking-[0.14em] mb-5"
+        style={{ color: '#4b5563' }}
+      >
+        Mohammed Al Sarraj · Dubai, UAE
+      </p>
       <div className="flex flex-wrap gap-6 text-sm">
         <a href="mailto:moealsarraj@gmail.com" className="text-muted hover:text-primary transition-colors">
           moealsarraj@gmail.com
@@ -17,7 +22,7 @@ export function Footer() {
         >
           github.com/moealsarraj
         </a>
-        <a href="/cv.pdf" download className="text-accent hover:underline">
+        <a href="/cv.pdf" download className="text-accent hover:text-accent-dark transition-colors">
           Download CV
         </a>
       </div>

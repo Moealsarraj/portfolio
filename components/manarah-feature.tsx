@@ -60,7 +60,7 @@ function ArchDiagram() {
 
 function ProductPreview() {
   return (
-    <div className="rounded-xl overflow-hidden border border-[#1e2d4a]" style={{ background: '#0c1222' }}>
+    <div className="rounded-xl overflow-hidden border border-[#1e2d4a]" style={{ background: '#0c1222', boxShadow: '0 4px 40px rgba(0,0,0,0.45)' }}>
       {/* Demo banner */}
       <div
         style={{
@@ -137,8 +137,8 @@ function ProductPreview() {
             { label: 'Wasit' },
             { label: 'Mizan' },
             { label: 'Amin' },
-            { label: 'AI' },
-          ].map(({ label, active }) => (
+            { label: 'AI', restricted: true },
+          ].map(({ label, active, restricted }) => (
             <div
               key={label}
               style={{
@@ -164,6 +164,25 @@ function ProductPreview() {
                 }}
               />
               {label}
+              {restricted && (
+                <span
+                  style={{
+                    marginLeft: 'auto',
+                    fontSize: '7px',
+                    fontWeight: 600,
+                    letterSpacing: '0.04em',
+                    textTransform: 'uppercase',
+                    color: '#6b7280',
+                    background: '#1a2540',
+                    border: '1px solid #2a3550',
+                    borderRadius: '3px',
+                    padding: '1px 5px',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  not in demo
+                </span>
+              )}
             </div>
           ))}
           {/* System section */}
