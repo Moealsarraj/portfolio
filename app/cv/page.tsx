@@ -18,12 +18,10 @@ export default function CVPage() {
 
         .cv-root {
           display: flex;
-          width: 960px;
-          height: 1357px; /* ~A4 at 96dpi */
+          max-width: 960px;
           margin: 0 auto;
           font-size: 11.5px;
           line-height: 1.45;
-          overflow: hidden;
         }
 
         /* ── LEFT SIDEBAR ── */
