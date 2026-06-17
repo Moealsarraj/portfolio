@@ -299,6 +299,8 @@ export default function CVPage() {
             <div className="cert-item">CDMP — Associate</div>
             <div className="cert-item">DAMA Data Management Fundamentals</div>
             <div className="cert-item">Informatica Data Privacy Governance</div>
+            <div className="cert-item">Data Governance &amp; Privacy: Governance for Analytics</div>
+            <div className="cert-item">Data Governance &amp; Privacy: Data Democratization</div>
             <div className="cert-item">Data Governance &amp; Privacy, Foundation</div>
             <div className="cert-item">Snowflake SPN: Sales &amp; Technical Sales</div>
           </div>
