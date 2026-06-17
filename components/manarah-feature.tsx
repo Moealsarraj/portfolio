@@ -65,11 +65,11 @@ export function ManarahFeature() {
         {/* Header */}
         <div className="mb-10 max-w-3xl">
           <div className="flex flex-wrap items-center gap-2 mb-4">
-            <span className="text-xs text-accent bg-accent/10 border border-accent/20 px-2.5 py-0.5 rounded-full font-medium">
+            <span className="text-xs text-accent bg-accent/10 border border-accent/20 px-2.5 py-0.5 rounded-lg font-medium">
               Demo Live
             </span>
-            <span className="text-xs text-muted border border-border px-2.5 py-0.5 rounded-full">NDMO P1–P3</span>
-            <span className="text-xs text-muted border border-border px-2.5 py-0.5 rounded-full">UAE PDPL</span>
+            <span className="text-xs text-muted border border-border px-2.5 py-0.5 rounded-lg">NDMO P1–P3</span>
+            <span className="text-xs text-muted border border-border px-2.5 py-0.5 rounded-lg">UAE PDPL</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Manarah Suite</h2>
           <p className="text-muted text-base leading-relaxed max-w-2xl">
@@ -128,13 +128,13 @@ export function ManarahFeature() {
             href="https://manarah-portal.onrender.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm px-5 py-2.5 bg-accent text-white font-semibold rounded-full hover:bg-accent-dark transition-colors"
+            className="text-sm px-5 py-2.5 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition-colors"
           >
             Try the Demo →
           </a>
           <a
             href="/projects/manarah"
-            className="text-sm px-5 py-2.5 border border-border text-muted rounded-full hover:border-accent hover:text-primary transition-colors"
+            className="text-sm px-5 py-2.5 border border-border text-muted rounded-lg hover:border-accent hover:text-primary transition-colors"
           >
             Architecture Deep Dive
           </a>
