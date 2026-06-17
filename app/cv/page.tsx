@@ -20,6 +20,7 @@ export default function CVPage() {
         .cv-root {
           display: flex;
           max-width: 960px;
+          min-height: 100vh;
           margin: 0 auto;
           font-size: 11.5px;
           line-height: 1.5;
@@ -242,7 +243,7 @@ export default function CVPage() {
           body { background: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
           @page { margin: 0; size: A4; }
 
-          .cv-root { max-width: 100%; font-size: 9.5px; line-height: 1.35; }
+          .cv-root { max-width: 100%; min-height: 100vh; font-size: 9.5px; line-height: 1.35; }
           .sidebar { padding: 14px 14px; }
           .sidebar-name { font-size: 18px; margin-bottom: 3px; }
           .sidebar-title { margin-bottom: 12px; font-size: 8px; }
