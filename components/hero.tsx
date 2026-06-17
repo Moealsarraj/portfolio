@@ -30,7 +30,7 @@ export function Hero() {
             Five years as a data governance engineer at BBI Consultancy, deployed
             across GCC government and enterprise: Abu Dhabi Executive Office, Qatar
             Central Bank, Dubai Police, DCT, SCAD, and YBA Kanoo. Outside that, I
-            built Manarah — a four-part data platform — and shipped 19+ AI tools,
+            built Manarah, a four-part data platform, and shipped 19+ AI tools,
             all publicly accessible.
           </p>
 
