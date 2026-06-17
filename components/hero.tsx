@@ -27,10 +27,11 @@ export function Hero() {
           </p>
 
           <p className="text-[15px] leading-relaxed max-w-md mb-10 text-muted">
-            Five years as a data governance engineer at BBI Consultancy, working
-            across GCC government clients: Qatar Central Bank, Abu Dhabi Executive
-            Office, Dubai Police. On my own time, I built Manarah, a practical
-            alternative to the Informatica stack.
+            Five years as a data governance engineer at BBI Consultancy, deployed
+            across GCC government and enterprise: Abu Dhabi Executive Office, Qatar
+            Central Bank, Dubai Police, DCT, SCAD, and YBA Kanoo. Outside that, I
+            built Manarah — a four-part data platform — and shipped 19+ AI tools,
+            all publicly accessible.
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -96,7 +97,7 @@ export function Hero() {
             {[
               { label: 'Experience', value: '5y+' },
               { label: 'AI Tools Shipped', value: '19+' },
-              { label: 'GCC Clients', value: '5+' },
+              { label: 'GCC Clients', value: '6+' },
             ].map(({ label, value }, i) => (
               <div
                 key={label}

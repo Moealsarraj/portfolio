@@ -49,8 +49,8 @@ export const DATA_TOOLS: Project[] = [
     category: 'Social Analytics',
     tagline: 'Social media analytics platform',
     description:
-      'Tracks and analyses social media engagement, trends, and audience data across platforms. Deployed on Render with pre-loaded demo data. Login: demo / demo123.',
-    architectureHighlight: 'Python Flask with Render deployment config. Seed-able demo data.',
+      'Monitors social media performance across platforms — post scoring, engagement rates, reach, composite performance metrics, and trend analysis. Opens directly into a pre-loaded demo account (Horizon Cafe) so you see the full analytics dashboard without any setup. Login: demo / demo123.',
+    architectureHighlight: 'Flask with SQLite, composite engagement scoring weighted by interaction type (saves 5×, shares 4×, comments 3×). Seeded with 8 real-style posts including AI-generated visual analysis and per-post "why it worked" breakdowns.',
     stack: ['Python', 'Flask', 'SQLite', 'Render'],
     status: 'live',
     liveUrl: 'https://rased-ydk2.onrender.com',
@@ -62,9 +62,9 @@ export const DATA_TOOLS: Project[] = [
     category: 'Arabic Localisation',
     tagline: 'RTL audit + Arabic translation tool',
     description:
-      'Audits any web project for RTL layout issues, translates UI strings to Arabic with contextual accuracy, auto-fixes CSS/HTML problems, and scores translation quality using Arabic NLP metrics.',
+      'Point it at any web project and it audits every template and stylesheet for RTL layout violations, translates UI strings to Arabic using a 10-provider fallback chain, auto-patches the CSS, and scores the output with Arabic NLP quality metrics. Opens with a full demo scan pre-loaded so you see real output immediately.',
     architectureHighlight:
-      'CLI + Flask web UI. Audits a running app via Playwright, then generates a diff patch and a quality report.',
+      'CLI + Flask web UI. 20+ RTL audit rules across CSS logical properties, dir attributes, float/text-align patterns. Translation engine with BLEU scoring, tashkeel checks, and terminology dictionary enforcement.',
     stack: ['Python', 'Flask', 'Claude API', 'Playwright', 'Arabic NLP'],
     status: 'live',
     liveUrl: 'https://tarjim-gvod.onrender.com',

@@ -351,7 +351,7 @@ export default function CVPage() {
                 A four-part data platform built as a practical alternative to Informatica.{' '}
                 <strong>Wasit</strong> handles ETL with 30+ connectors, <strong>Mizan</strong> runs data quality scoring,{' '}
                 <strong>Amin</strong> manages governance and catalog, and <strong>Manarah AI</strong> is a chat interface into all three.
-                UAE PDPL compliance controls sit inside each pipeline step.
+                UAE PDPL compliance controls sit inside each pipeline step. Live at moealsarraj.com — demo / demo123.
               </p>
             </div>
 
@@ -363,7 +363,8 @@ export default function CVPage() {
                 <span className="suite-label">BizIntel</span> (7) — Competitive Intel, Persona Studio, Meeting Distiller, Contract Lens, CSV Storyteller, Resume Match, Resume Forge.{' '}
                 <span className="suite-label">DevKit</span> (6) — Schema Detective, Test Forge, SQL Whisperer, Doc Forge, Changelog AI, Git Narrator.{' '}
                 <span className="suite-label">AI Lab</span> (4) — Prompt Bench, Prompt Shield, Agent Builder, Arabic Bench.{' '}
-                <span className="suite-label">ContentForge</span> (2) — Content Repurposer, AI Debate Arena.
+                <span className="suite-label">ContentForge</span> (2) — Content Repurposer, AI Debate Arena.{' '}
+                All four suites are live and publicly accessible. Source on GitHub.
               </p>
             </div>
           </div>
@@ -375,7 +376,7 @@ export default function CVPage() {
               <span className="job-title">Senior Data Governance Engineer <em>at BBI Consultancy</em></span>
               <span className="job-meta">2021 – present · Dubai</span>
             </div>
-            <div className="job-subtitle">Lead consultant on multi-year governance engagements for GCC government bodies and financial regulators.</div>
+            <div className="job-subtitle">BBI is a boutique GCC data governance consultancy. As lead technical consultant, I was the primary delivery resource on all six engagements below — from architecture through implementation and enablement.</div>
 
             <ExperienceTabs />
           </div>
