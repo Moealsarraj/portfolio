@@ -7,18 +7,20 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className="flex items-center justify-between mb-3">
         <span className="text-xs text-accent font-medium uppercase tracking-wide">{category}</span>
         {status === 'live' && (
-          <span className="text-xs text-green-400 bg-green-400/10 px-2 py-0.5 rounded-full">Live</span>
+          <span className="text-xs text-green-500 bg-green-500/10 px-2 py-0.5 rounded">Live</span>
         )}
         {status === 'demo' && (
-          <span className="text-xs text-accent bg-accent/10 px-2 py-0.5 rounded-full">Demo</span>
+          <span className="text-xs text-accent bg-accent/10 px-2 py-0.5 rounded">Demo</span>
         )}
       </div>
       <h3 className="text-primary font-semibold text-lg mb-2">{name}</h3>
-      <p className="text-muted text-sm leading-relaxed mb-3 flex-1">{description}</p>
-      <p className="text-xs text-[#555] italic mb-4 leading-relaxed">
-        <span className="text-[#666] not-italic">Architecture: </span>
+      <p className="text-muted text-sm leading-relaxed mb-3">{description}</p>
+      <p className="text-xs text-muted2 italic mb-4 leading-relaxed">
+        <span className="not-italic text-muted">Architecture: </span>
         {architectureHighlight}
       </p>
+      {/* spacer pushes tags + link to bottom */}
+      <div className="flex-1" />
       <div className="flex flex-wrap gap-1.5 mb-4">
         {stack.map((s) => (
           <span key={s} className="text-xs text-muted bg-bg border border-border px-2 py-0.5 rounded">
@@ -31,7 +33,7 @@ export function ProjectCard({ project }: { project: Project }) {
           href={liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm text-accent hover:underline mt-auto"
+          className="text-sm text-accent hover:underline"
         >
           Try it →
         </a>
