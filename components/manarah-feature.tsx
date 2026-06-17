@@ -82,7 +82,11 @@ export function ManarahFeature() {
         {/* Screenshot + architecture */}
         <div className="grid lg:grid-cols-2 gap-5 mb-8">
           {/* Real Manarah screenshot */}
-          <div className="rounded-xl overflow-hidden border border-border bg-card"
+          <a
+            href="https://manarah-portal.onrender.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl overflow-hidden border border-border bg-card block hover:border-accent/40 transition-colors"
             style={{ boxShadow: '0 1px 8px rgba(0,0,0,0.07)' }}
           >
             <img
@@ -90,10 +94,12 @@ export function ManarahFeature() {
               alt="Manarah portal — Manarah AI, Wasit, Mizan, and Amin"
               className="w-full"
             />
-          </div>
+          </a>
 
           {/* Architecture diagram */}
-          <div className="bg-card border border-border rounded-xl p-5"
+          <a
+            href="/projects/manarah"
+            className="bg-card border border-border rounded-xl p-5 block hover:border-accent/40 transition-colors"
             style={{ boxShadow: '0 1px 8px rgba(0,0,0,0.07)' }}
           >
             <p className="text-[10px] text-accent uppercase tracking-widest mb-4 font-medium">
@@ -110,7 +116,7 @@ export function ManarahFeature() {
               <code className="text-[#888] bg-bg px-1 rounded text-[11px]">/amin/*</code> to
               internal processes. One URL, four services.
             </p>
-          </div>
+          </a>
         </div>
 
         {/* Stack */}
