@@ -17,26 +17,26 @@ function ArchDiagram() {
       <line x1="385" y1="54" x2="510" y2="100" stroke="#d1d5db" strokeWidth="1.5" />
 
       {/* Wasit */}
-      <rect x="10" y="100" width="120" height="56" rx="6" fill="#ffffff" stroke="#f59e0b" strokeWidth="1.5" strokeOpacity="0.5" />
-      <text x="70" y="122" textAnchor="middle" fill="#d97706" fontSize="10" fontWeight="600" fontFamily="Inter, sans-serif">Wasit</text>
+      <rect x="10" y="100" width="120" height="56" rx="6" fill="#ffffff" stroke="#2d3548" strokeWidth="1.5" strokeOpacity="0.5" />
+      <text x="70" y="122" textAnchor="middle" fill="#2d3548" fontSize="10" fontWeight="600" fontFamily="Inter, sans-serif">Wasit</text>
       <text x="70" y="136" textAnchor="middle" fill="#6b7280" fontSize="8" fontFamily="Inter, sans-serif">ETL · 30+ Connectors</text>
       <text x="70" y="149" textAnchor="middle" fill="#d1d5db" fontSize="7.5" fontFamily="Inter, sans-serif">port 5004</text>
 
       {/* Mizan */}
-      <rect x="145" y="100" width="120" height="56" rx="6" fill="#ffffff" stroke="#f59e0b" strokeWidth="1.5" strokeOpacity="0.5" />
-      <text x="205" y="122" textAnchor="middle" fill="#d97706" fontSize="10" fontWeight="600" fontFamily="Inter, sans-serif">Mizan</text>
+      <rect x="145" y="100" width="120" height="56" rx="6" fill="#ffffff" stroke="#2d3548" strokeWidth="1.5" strokeOpacity="0.5" />
+      <text x="205" y="122" textAnchor="middle" fill="#2d3548" fontSize="10" fontWeight="600" fontFamily="Inter, sans-serif">Mizan</text>
       <text x="205" y="136" textAnchor="middle" fill="#6b7280" fontSize="8" fontFamily="Inter, sans-serif">Data Quality · Scoring</text>
       <text x="205" y="149" textAnchor="middle" fill="#d1d5db" fontSize="7.5" fontFamily="Inter, sans-serif">port 5002</text>
 
       {/* Amin */}
-      <rect x="315" y="100" width="120" height="56" rx="6" fill="#ffffff" stroke="#f59e0b" strokeWidth="1.5" strokeOpacity="0.5" />
-      <text x="375" y="122" textAnchor="middle" fill="#d97706" fontSize="10" fontWeight="600" fontFamily="Inter, sans-serif">Amin</text>
+      <rect x="315" y="100" width="120" height="56" rx="6" fill="#ffffff" stroke="#2d3548" strokeWidth="1.5" strokeOpacity="0.5" />
+      <text x="375" y="122" textAnchor="middle" fill="#2d3548" fontSize="10" fontWeight="600" fontFamily="Inter, sans-serif">Amin</text>
       <text x="375" y="136" textAnchor="middle" fill="#6b7280" fontSize="8" fontFamily="Inter, sans-serif">Governance · NDMO</text>
       <text x="375" y="149" textAnchor="middle" fill="#d1d5db" fontSize="7.5" fontFamily="Inter, sans-serif">port 5001</text>
 
       {/* Manarah AI */}
-      <rect x="450" y="100" width="120" height="56" rx="6" fill="#ffffff" stroke="#f59e0b" strokeWidth="1.5" strokeOpacity="0.5" />
-      <text x="510" y="122" textAnchor="middle" fill="#d97706" fontSize="10" fontWeight="600" fontFamily="Inter, sans-serif">Manarah AI</text>
+      <rect x="450" y="100" width="120" height="56" rx="6" fill="#ffffff" stroke="#2d3548" strokeWidth="1.5" strokeOpacity="0.5" />
+      <text x="510" y="122" textAnchor="middle" fill="#2d3548" fontSize="10" fontWeight="600" fontFamily="Inter, sans-serif">Manarah AI</text>
       <text x="510" y="136" textAnchor="middle" fill="#6b7280" fontSize="8" fontFamily="Inter, sans-serif">LLM Agent · Chat</text>
       <text x="510" y="149" textAnchor="middle" fill="#d1d5db" fontSize="7.5" fontFamily="Inter, sans-serif">Claude API</text>
 
