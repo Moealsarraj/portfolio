@@ -239,9 +239,35 @@ export default function CVPage() {
 
         @media print {
           .no-print { display: none !important; }
-          .cv-root { max-width: 100%; }
           body { background: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
           @page { margin: 0; size: A4; }
+
+          .cv-root { max-width: 100%; font-size: 9.5px; line-height: 1.35; }
+          .sidebar { padding: 14px 14px; }
+          .sidebar-name { font-size: 18px; margin-bottom: 3px; }
+          .sidebar-title { margin-bottom: 12px; font-size: 8px; }
+          .portfolio-btn { padding: 5px 10px; font-size: 10px; margin-bottom: 12px; }
+          .sidebar-section { margin-bottom: 9px; }
+          .sidebar-section-label { margin-bottom: 5px; padding-bottom: 3px; }
+          .sidebar p { font-size: 9px; }
+          .stack-group { margin-bottom: 4px; }
+          .stack-group p { font-size: 8.5px; line-height: 1.35; }
+          .cert-item { font-size: 8.5px; margin-bottom: 2px; }
+          .lang-row { font-size: 9px; margin-bottom: 2px; }
+
+          .main { padding: 14px 18px; }
+          .summary { font-size: 9.5px; line-height: 1.5; margin-bottom: 9px; }
+          .section { margin-bottom: 9px; }
+          .section-heading { margin-bottom: 6px; padding-bottom: 2px; }
+          .project-name { font-size: 10px; margin-bottom: 1px; }
+          .project-desc { font-size: 9px; line-height: 1.4; margin-bottom: 2px; }
+          .job-title { font-size: 10px; }
+          .job-meta { font-size: 9px; }
+          .job-subtitle { font-size: 9px; margin-bottom: 6px; }
+
+          .exp-panel { display: block !important; margin-bottom: 6px !important; }
+          .exp-panel > div { font-size: 9.5px; margin-bottom: 3px; }
+          .exp-panel li { font-size: 9px !important; line-height: 1.4 !important; margin-bottom: 2px !important; }
         }
       `}</style>
 
