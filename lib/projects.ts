@@ -49,7 +49,7 @@ export const DATA_TOOLS: Project[] = [
     category: 'Social Analytics',
     tagline: 'Social media analytics platform',
     description:
-      'Tracks and analyses social media engagement, trends, and audience data across platforms. Deployed on Render with seed-able demo data.',
+      'Tracks and analyses social media engagement, trends, and audience data across platforms. Deployed on Render with pre-loaded demo data. Login: demo / demo123.',
     architectureHighlight: 'Python Flask with Render deployment config. Seed-able demo data.',
     stack: ['Python', 'Flask', 'SQLite', 'Render'],
     status: 'live',
