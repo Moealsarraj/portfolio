@@ -1,7 +1,7 @@
 import type { Project } from '@/lib/projects'
 
 export function ProjectCard({ project }: { project: Project }) {
-  const { name, category, description, architectureHighlight, stack, status, liveUrl } = project
+  const { name, category, description, stack, status, liveUrl } = project
   return (
     <div className="bg-card border border-border rounded-xl p-6 hover:border-accent/40 transition-colors flex flex-col" style={{ boxShadow: '0 1px 4px rgba(0,0,0,0.05)' }}>
       <div className="flex items-center justify-between mb-3">
@@ -14,13 +14,7 @@ export function ProjectCard({ project }: { project: Project }) {
         )}
       </div>
       <h3 className="text-primary font-semibold text-lg mb-2">{name}</h3>
-      <p className="text-muted text-sm leading-relaxed mb-3">{description}</p>
-      <p className="text-xs text-muted2 italic mb-4 leading-relaxed">
-        <span className="not-italic text-muted">Architecture: </span>
-        {architectureHighlight}
-      </p>
-      {/* spacer pushes tags + link to bottom */}
-      <div className="flex-1" />
+      <p className="text-muted text-sm leading-relaxed mb-4 flex-1">{description}</p>
       <div className="flex flex-wrap gap-1.5 mb-4">
         {stack.map((s) => (
           <span key={s} className="text-xs text-muted bg-bg border border-border px-2 py-0.5 rounded">
