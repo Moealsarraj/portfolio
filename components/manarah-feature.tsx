@@ -71,7 +71,7 @@ export function ManarahFeature() {
             <span className="text-xs text-muted border border-border px-2.5 py-0.5 rounded-lg">NDMO P1–P3</span>
             <span className="text-xs text-muted border border-border px-2.5 py-0.5 rounded-lg">UAE PDPL</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Manarah Suite</h2>
+          <h2 className="text-3xl sm:text-4xl font-light text-primary mb-4">Manarah Suite</h2>
           <p className="text-muted text-base leading-relaxed max-w-2xl">
             Four services behind a single portal. Wasit moves data, Mizan checks it, Amin governs
             it, and Manarah AI gives you a chat interface into all three. Compliance rules for NDMO
