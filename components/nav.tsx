@@ -28,10 +28,10 @@ export function Nav() {
       </div>
 
       <div className="flex gap-5 items-center">
-        <a href="#projects" className="text-muted hover:text-primary text-[13px] transition-colors hidden sm:block">
+        <a href="#projects" className="text-muted hover:text-primary text-[13px] transition-colors hidden sm:flex items-center self-stretch px-1">
           Work
         </a>
-        <a href="#contact" className="text-muted hover:text-primary text-[13px] transition-colors hidden sm:block">
+        <a href="#contact" className="text-muted hover:text-primary text-[13px] transition-colors hidden sm:flex items-center self-stretch px-1">
           Contact
         </a>
         <a
