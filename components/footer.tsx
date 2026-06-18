@@ -1,10 +1,7 @@
 export function Footer() {
   return (
     <footer id="contact" className="px-6 py-12 max-w-5xl mx-auto border-t border-border">
-      <p
-        className="text-[11px] uppercase tracking-[0.14em] mb-5"
-        style={{ color: '#4b5563' }}
-      >
+      <p className="text-[11px] uppercase tracking-[0.14em] text-muted mb-5">
         Mohammed Al Sarraj · Dubai, UAE
       </p>
       <div className="flex flex-wrap gap-6 text-sm">
