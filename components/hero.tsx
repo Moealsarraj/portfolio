@@ -1,6 +1,6 @@
 export function Hero() {
   return (
-    <section className="pt-36 pb-24 px-6 max-w-4xl mx-auto">
+    <section className="pt-24 pb-16 sm:pt-36 sm:pb-24 px-6 max-w-4xl mx-auto">
 
       {/* Availability */}
       <div className="flex items-center gap-2.5 mb-10">
@@ -65,7 +65,7 @@ export function Hero() {
       </div>
 
       {/* Stats — ruled line, no card */}
-      <div className="flex gap-10 border-t border-border pt-8">
+      <div className="flex gap-6 sm:gap-10 border-t border-border pt-8">
         {[
           { value: '5y+',  label: 'Experience' },
           { value: '19+',  label: 'AI Tools Shipped' },
