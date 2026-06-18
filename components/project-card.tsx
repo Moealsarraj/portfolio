@@ -27,7 +27,7 @@ export function ProjectCard({ project }: { project: Project }) {
           href={liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm text-accent hover:underline"
+          className="text-sm text-accent hover:underline py-1.5 inline-block"
         >
           Try it →
         </a>

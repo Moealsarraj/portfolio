@@ -23,12 +23,12 @@ export function SectionAiTools() {
             </div>
             <div className="flex gap-3">
               {suite.liveUrl && (
-                <a href={suite.liveUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-accent hover:underline">
+                <a href={suite.liveUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-accent hover:underline py-1.5 inline-block">
                   Open suite →
                 </a>
               )}
               {suite.githubUrl && (
-                <a href={suite.githubUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-muted hover:text-primary">
+                <a href={suite.githubUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-muted hover:text-primary py-1.5 inline-block">
                   GitHub
                 </a>
               )}
