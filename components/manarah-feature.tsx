@@ -134,13 +134,13 @@ export function ManarahFeature() {
             href="https://manarah-portal.onrender.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm px-5 py-2.5 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition-colors"
+            className="text-sm px-5 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition-colors"
           >
             Try the Demo →
           </a>
           <a
             href="/projects/manarah"
-            className="text-sm px-5 py-2.5 border border-border text-muted rounded-lg hover:border-accent hover:text-primary transition-colors"
+            className="text-sm px-5 py-3 border border-border text-muted rounded-lg hover:border-accent hover:text-primary transition-colors"
           >
             Architecture Deep Dive
           </a>

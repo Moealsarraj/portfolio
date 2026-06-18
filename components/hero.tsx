@@ -44,7 +44,7 @@ export function Hero() {
       <div className="flex flex-wrap gap-3 mb-14">
         <a
           href="/cv"
-          className="text-sm px-5 py-2.5 bg-accent text-white font-medium rounded-lg hover:bg-accent-dark transition-colors"
+          className="text-sm px-5 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-dark transition-colors"
         >
           View CV
         </a>
@@ -52,13 +52,13 @@ export function Hero() {
           href="https://github.com/moealsarraj"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm px-5 py-2.5 border border-border text-muted rounded-lg hover:border-accent/40 hover:text-primary transition-colors"
+          className="text-sm px-5 py-3 border border-border text-muted rounded-lg hover:border-accent/40 hover:text-primary transition-colors"
         >
           GitHub
         </a>
         <a
           href="mailto:moealsarraj@gmail.com"
-          className="text-sm px-5 py-2.5 border border-border text-muted rounded-lg hover:border-accent/40 hover:text-primary transition-colors"
+          className="text-sm px-5 py-3 border border-border text-muted rounded-lg hover:border-accent/40 hover:text-primary transition-colors"
         >
           Email
         </a>
