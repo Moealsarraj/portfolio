@@ -10,7 +10,7 @@ export function SectionAiTools() {
           <div key={suite.name} className="bg-card border border-border rounded-xl p-6 hover:border-accent/30 transition-colors">
             <div className="flex items-center justify-between mb-3">
               <span className="text-accent font-semibold">{suite.name}</span>
-              <span className="text-xs text-muted bg-bg border border-border px-2 py-0.5 rounded-full">
+              <span className="text-xs text-muted bg-bg border border-border px-2 py-0.5 rounded">
                 {suite.count} tools
               </span>
             </div>

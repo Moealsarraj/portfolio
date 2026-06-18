@@ -18,10 +18,7 @@ export function Nav() {
       }`}
     >
       <div className="flex items-center gap-2.5">
-        <div
-          className="w-5 h-5 rounded flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0"
-          style={{ background: '#2d3548' }}
-        >
+        <div className="w-5 h-5 rounded flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0 bg-accent">
           M
         </div>
         <span className="text-primary text-[13px] font-medium tracking-tight">moealsarraj</span>
