@@ -11,7 +11,7 @@ export function Hero() {
             animation: 'pulse-dot 2.4s ease-in-out infinite',
           }}
         />
-        <span className="text-[11px] uppercase tracking-[0.18em] text-muted2">
+        <span className="text-[11px] uppercase tracking-[0.18em] text-muted">
           Available · Dubai, UAE
         </span>
       </div>
@@ -75,7 +75,7 @@ export function Hero() {
             <div className="text-2xl font-semibold text-primary leading-none mb-1.5">
               {value}
             </div>
-            <div className="text-[10px] uppercase tracking-[0.12em] text-muted2">
+            <div className="text-[10px] uppercase tracking-[0.12em] text-muted">
               {label}
             </div>
           </div>
