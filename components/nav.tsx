@@ -36,7 +36,7 @@ export function Nav() {
         </a>
         <a
           href="/cv"
-          className="text-[13px] px-3.5 py-1.5 border border-border rounded text-primary hover:border-accent transition-colors bg-card"
+          className="text-[13px] px-3.5 py-3 border border-border rounded text-primary hover:border-accent transition-colors bg-card"
         >
           CV →
         </a>
