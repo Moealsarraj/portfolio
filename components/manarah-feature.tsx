@@ -105,7 +105,9 @@ export function ManarahFeature() {
             <p className="text-[10px] text-accent uppercase tracking-widest mb-4 font-medium">
               System Architecture
             </p>
-            <ArchDiagram />
+            <div className="hidden sm:block">
+              <ArchDiagram />
+            </div>
             <p className="text-xs text-muted mt-4 leading-relaxed">
               Each component runs as an independent gunicorn process. They share a single signed
               session cookie via a common{' '}
